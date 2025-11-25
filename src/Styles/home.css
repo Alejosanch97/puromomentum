@@ -1,0 +1,443 @@
+/* Colores */
+:root {
+    --primary-background: #1a1a1a;
+    --secondary-background: #ffffff;
+    --text-color-dark: #ffffff;
+    --text-color-light: #ffffff; /* Ajustado para que Slide 2 tenga texto blanco */
+    --accent-color: #ff4a68;
+    --social-dot-color: #ff4a68;
+}
+
+/* ==================================================== */
+/* 1. ESTRUCTURA DEL SLIDER (VENTANA Y CINTA) */
+/* ==================================================== */
+
+/* La "ventana" visible del carrusel */
+.hero-slider-window {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Oculta los slides que están a los lados */
+    background-color: #000;
+}
+
+/* La "cinta" larga que contiene todos los slides lado a lado */
+.slider-track {
+    display: flex; /* Pone los slides en fila horizontal */
+    width: 100%;
+    height: 100%;
+    /* LA MAGIA DEL SCROLL: Transición de movimiento horizontal */
+    transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Cada Slide individual */
+.slide-item {
+    min-width: 100%; /* Cada slide ocupa el 100% del ancho de la ventana */
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Fondos por tema (Ajuste para que 'light' sea fondo negro/oscuro) */
+.slide-item.theme-dark {
+    background-color: var(--primary-background); /* Dark background for Slide 1 */
+}
+.slide-item.theme-light {
+    background-color: #000000; /* Fondo negro para Slide 2, CORREGIDO */
+}
+
+/* ==================================================== */
+/* 2. MEDIA (FONDO DE VIDEO / IMAGEN) */
+/* ==================================================== */
+
+/* Wrapper para el video del Slide 1 */
+.media-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que cubra todo sin deformarse */
+}
+
+/* Overlay oscuro sobre el video */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* El color se establece dinámicamente en el JSX */
+}
+
+/* Imagen del Slide 2 (Split) */
+.split-media-container-img {
+    width: 100%;
+    height: 600px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* ==================================================== */
+/* 3. CONTENIDO (TEXTOS) */
+/* ==================================================== */
+
+.slide-content-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenido genérico */
+.hero-content {
+    text-align: center;
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 40px;
+}
+
+/* Títulos */
+.hero-title {
+    font-size: 6vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    /* Color predeterminado para Slide 1 (theme-dark) */
+    color: var(--text-color-dark); 
+}
+
+/* Forzar dos líneas para Slide 1 (We are / Puro Momentum) */
+.hero-title.multi-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-title.multi-line .text-block-1 { 
+    margin-bottom: 5px; 
+}
+
+/* Asegura que el highlight también ocupe su propia línea */
+.hero-title.multi-line .text-block-2 {
+    display: block;
+}
+
+.highlight { color: var(--accent-color); }
+
+.hero-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+    /* Color predeterminado para Slide 1 */
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Botones */
+.hero-button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 4px;
+}
+.hero-button:hover { background-color: #e53956; }
+
+/* === Slide 2 Específico (Split - theme-light) === */
+.hero-content.split-content {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    /* CORRECCIÓN: Aseguramos que el texto de Slide 2 sea blanco */
+    color: var(--text-color-light); 
+}
+
+.split-text-container {
+    flex: 1;
+    padding-left: 100px;
+    padding-right: 30px;
+    max-width: 60%;
+}
+
+.slide-2-title {
+    font-size: 4.5vw;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.slide-2-subtitle {
+    font-size: 18px;
+    /* CORRECCIÓN: El subtítulo de Slide 2 también debe ser blanco */
+    color: rgba(255, 255, 255, 0.9); 
+    margin-bottom: 40px;
+}
+.split-media-container {
+    flex: 1;
+    max-width: 40%;
+}
+
+
+/* ==================================================== */
+/* 4. CONTROLES FIJOS (SOCIALES Y PUNTOS) - CORREGIDO */
+/* ==================================================== */
+
+/* Contenedor fijo que flota sobre los slides */
+.fixed-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    transition: color 0.5s ease;
+}
+
+/* Habilitar clicks en los hijos */
+.fixed-controls .social-links,
+.fixed-controls .slider-indicators {
+    pointer-events: auto;
+}
+
+/* Colores de controles según tema */
+.fixed-controls.theme-dark,
+.fixed-controls.theme-light { /* Ambos temas usan texto blanco para los controles fijos */
+    color: #fff; 
+}
+.fixed-controls.theme-dark a,
+.fixed-controls.theme-light a {
+    color: #fff;
+}
+
+
+/* Redes Sociales (Izquierda) */
+.social-links {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    /* Aplicamos la rotación -90deg aquí para poner la barra vertical */
+    transform: translateY(-50%) rotate(-90deg) translateX(-50%);
+    transform-origin: 0 0;
+    display: flex;
+    gap: 30px;
+}
+
+/* Enlaces individuales */
+.social-links a {
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    /* Usamos flex para alinear los elementos internos (punto, icono, texto) horizontalmente */
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+    /* IMPORTANTE: Quitamos la rotación del <a> para que el contenido interno fluya normalmente */
+    transform: none; 
+}
+
+/* El punto de color (debe ir antes del icono en el HTML/JSX) */
+.social-dot {
+    width: 6px; 
+    height: 6px; 
+    background: var(--social-dot-color);
+    border-radius: 50%; 
+    /* Margen a la derecha para separarse del icono */
+    margin-right: 8px; 
+    /* IMPORTANTE: Eliminamos la rotación para que se vea como un círculo */
+    transform: none; 
+    display: inline-block;
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+/* El icono */
+.social-links i { 
+    /* Margen a la derecha para separarse del texto */
+    margin-right: 8px; 
+    /* IMPORTANTE: Eliminamos la rotación para que el icono se vea correctamente */
+    transform: none; 
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+/* Indicadores (Derecha) */
+.slider-indicators {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.indicator {
+    font-size: 20px;
+    font-weight: 600;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.active-indicator {
+    opacity: 1;
+    color: var(--accent-color) !important;
+}
+
+/* ==================================================== */
+/* 5. ABOUT SECTION (ABAJO) - ESTILO FINALIZADO */
+/* ==================================================== */
+.about-section {
+    width: 100%;
+    background-color: #ffffff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.about-content-wrapper {
+    display: flex;
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 40px;
+    align-items: center;
+    gap: 80px;
+}
+
+.about-image-container {
+    flex: 1; 
+    min-width: 0;
+}
+
+.about-image-placeholder {
+    width: 100%;
+    height: 480px;
+    background-color: #3d3d3d;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.about-content {
+    flex: 1; 
+    color: #000000;
+    text-align: left;
+}
+
+.about-title {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.about-title .highlight {
+    color: var(--accent-color);
+}
+
+.about-text {
+    font-size: 22px; 
+    line-height: 1.7;
+    margin-bottom: 40px;
+    color: rgba(0, 0, 0, 0.85); 
+    font-weight: 400;
+    text-align: justify; 
+}
+
+/* CLASE NUEVA: Para poner texto en mayúsculas */
+.uppercase-text {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* CLASE EXISTENTE: Para palabras con subrayado */
+.underlined-keyword {
+    font-weight: 600;
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 2px;
+    line-height: 1.2;
+}
+
+/* CLASE NUEVA: Para el efecto de círculo (se aplica a 'estrategia') */
+.circled-keyword {
+    position: relative;
+    font-weight: 600;
+    display: inline-block;
+    /* Ajustamos el padding para el círculo. Eliminado el padding-bottom adicional del subrayado. */
+    padding: 2px 7px; 
+    
+    /* CAMBIO: Eliminadas las propiedades de border-bottom (subrayado) */
+    
+    /* Ajustamos el z-index para que el texto esté por encima del círculo */
+    z-index: 1; 
+}
+
+/* Pseudo-elemento para el círculo */
+.circled-keyword::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Ajustes para que el círculo sea más envolvente y visible */
+    width: 125%; /* Ajusta el tamaño del círculo */
+    height: 125%; /* Ajusta el tamaño del círculo */
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--accent-color); /* Borde del círculo */
+    border-radius: 50%;
+    /* El z-index negativo lo coloca detrás del contenido del span */
+    z-index: -1; 
+    /* Fondo transparente para que solo se vea el borde */
+    background-color: transparent; 
+}
+
+/* Estilo para las palabras que son solo negritas, como "Puro Momentum" */
+.about-text strong {
+    font-weight: 700;
+    color: #000000;
+}
+
+.about-button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 4px;
+}
+.about-button:hover {
+    background-color: #e53956;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .social-links, .slider-indicators { display: none; }
+    .hero-content.split-content { flex-direction: column; text-align: center; }
+    .split-text-container { padding: 0; max-width: 100%; margin-bottom: 30px; }
+    .hero-title { font-size: 8vw; }
+    .about-section { flex-direction: column; }
+}
