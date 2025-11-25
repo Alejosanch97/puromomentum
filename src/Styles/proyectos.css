@@ -1,0 +1,314 @@
+:root {
+    /* Variables de color (asegúrate de que estas existan) */
+    --color-primary-orange: #d85c3b; /* Tono de rojo/naranja más profundo para elegancia */
+    --color-background-dark: #121212; /* Fondo casi negro */
+    --color-background-light: #f4f4f4; /* Gris muy claro para contraste */
+    --color-text-light: #FFFFFF;
+    --color-text-dark: #333333;
+    --border-radius-large: 12px;
+}
+
+/* ================================================= */
+/* PROYECTOS.CSS - SECCIÓN 1: HERO/INTRODUCCIÓN */
+/* ================================================= */
+
+/* 1. Contenedor de la Sección Principal */
+.projects-main-hero-section {
+    position: relative;
+    height: 100vh; /* Ocupa toda la altura de la vista */
+    min-height: 700px; /* Asegura un tamaño mínimo en pantallas pequeñas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light); 
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--color-background-dark); /* Fondo oscuro de respaldo */
+}
+
+/* 2. Media Wrapper (Contenedor del Video) */
+.projects-media-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* Efecto de desenfoque suave al fondo para que el texto resalte */
+    filter: blur(2px);
+    transform: scale(1.02); /* Escalar ligeramente para ocultar bordes del blur */
+}
+
+.projects-background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre todo el contenedor sin distorsionar */
+}
+
+/* Overlay (Para garantizar la legibilidad del texto) */
+.projects-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* El estilo de opacidad (rgba(0, 0, 0, 0.6)) ya está en el JSX en línea */
+}
+
+/* 3. Contenido Centrado */
+.projects-hero-content-wrapper {
+    position: relative;
+    z-index: 10; /* Asegura que el contenido esté sobre el video y el overlay */
+    max-width: 1000px;
+    padding: 0 5vw;
+    /* Animación sutil de desvanecimiento al cargar para elegancia */
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 4. Título Principal */
+.projects-hero-title {
+    /* Título muy grande y adaptable (responsive) */
+    font-size: clamp(3rem, 10vw, 7rem); 
+    font-weight: 900; 
+    line-height: 0.9; /* Líneas muy cercanas */
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Sombra para resaltar sobre el video */
+}
+
+.projects-hero-title .projects-line-1 {
+    font-weight: 500; /* Menos peso visual para la primera línea */
+    display: block;
+    letter-spacing: 5px; /* Espaciado sutil para un look premium */
+    font-size: 0.8em; /* Un poco más pequeña que la línea 2 */
+}
+
+.projects-hero-title .projects-highlight {
+    color: var(--color-primary-orange); 
+}
+
+/* 5. Subtítulo */
+.projects-hero-subtitle {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 30px auto 0;
+    line-height: 1.5;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+.projects-hero-subtitle .projects-brand-highlight {
+    font-weight: 700;
+    color: var(--color-text-light); /* Mantener la marca en blanco puro */
+}
+
+/* ================================================= */
+/* SECCIÓN 2: LISTA DE PROYECTOS (FONDO CLARO) */
+/* ================================================= */
+
+/* 1. Contenedor de la Sección Principal */
+.projects-list-section {
+    /* CAMBIO CLAVE: Fondo gris muy claro */
+    background-color: var(--color-background-light); 
+    padding: 100px 0; 
+    /* CAMBIO CLAVE: Color de texto principal oscuro */
+    color: var(--color-text-dark); 
+}
+
+.projects-list-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5vw; 
+}
+
+/* --- TÍTULOS DE SECCIÓN --- */
+.projects-section-title {
+    font-size: clamp(3rem, 8vw, 5rem); 
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    /* Ya usa --color-text-dark por herencia, lo que es correcto */
+}
+
+.projects-section-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 80px;
+    text-align: center;
+    opacity: 0.8;
+    /* Ya usa --color-text-dark por herencia, lo que es correcto */
+}
+
+/* --- CONTENEDOR DE LA LISTA DE PROYECTOS --- */
+.projects-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 100px; 
+}
+
+/* --- ITEM DE PROYECTO (Layout: Video | Info) --- */
+.projects-grid-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+    align-items: stretch;
+}
+
+/* --- LAYOUT ALTERNADO (Texto | Video) --- */
+.projects-grid-item.project-layout-reversed {
+    grid-template-areas: "info video";
+}
+
+.projects-grid-item.project-layout-reversed .projects-video-container {
+    grid-area: video;
+}
+
+.projects-grid-item.project-layout-reversed .projects-info-card {
+    grid-area: info;
+}
+
+
+/* --- ESTILO DEL VIDEO EMBED --- */
+.projects-video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    /* Sombra más sutil para fondo claro */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.3s ease;
+}
+
+.projects-video-container:hover {
+    transform: translateY(-5px); 
+}
+
+.projects-video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --- ESTILO DE LA TARJETA DE INFORMACIÓN NARANJA (Se mantiene para contraste) --- */
+.projects-info-card {
+    /* Mantiene el color primario para que contraste fuertemente con el fondo blanco */
+    background-color: var(--color-primary-orange); 
+    color: var(--color-text-light); /* Texto blanco sobre naranja */
+    padding: 50px;
+    border-radius: var(--border-radius-large);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.projects-info-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.projects-info-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.projects-info-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    width: 60px;
+    margin: 10px 0 25px 0;
+}
+
+.projects-info-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* ================================================= */
+/* SECCIÓN 3: RECAP ANUAL */
+/* ================================================= */
+
+.projects-recap-section {
+    /* Fondo oscuro para un look cinematográfico y contraste */
+    background-color: var(--color-background-dark); 
+    padding: 100px 0;
+    color: var(--color-text-light);
+    text-align: center;
+}
+
+.projects-recap-wrapper {
+    max-width: 1000px; /* Contenedor más estrecho para centrar la atención */
+    margin: 0 auto;
+    padding: 0 5vw;
+}
+
+/* --- TÍTULO --- */
+.projects-recap-title {
+    font-size: clamp(2.5rem, 6vw, 4rem); 
+    font-weight: 800;
+    margin-bottom: 50px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.projects-recap-title .recap-highlight {
+    color: var(--color-primary-orange);
+}
+
+/* --- CONTENEDOR DEL VIDEO --- */
+.projects-recap-video-container {
+    /* Contenedor responsivo 16:9, idéntico al de los proyectos individuales */
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Relación de aspecto 16:9 */
+    margin-bottom: 40px;
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    /* Sombra fuerte para el ambiente oscuro */
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15); 
+}
+
+.projects-recap-video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- DESCRIPCIÓN --- */
+.projects-recap-description {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+/* Añade esto a tu CSS (para Sección 2 y 3) */
+.projects-video-element,
+.projects-recap-video-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra el contenedor */
+}

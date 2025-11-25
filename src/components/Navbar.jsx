@@ -44,7 +44,6 @@ export const Navbar = () => {
                 <div className="navbar-links">
                     <NavLink to="/" className={getNavLinkClass}>Inicio</NavLink>
                     <NavLink to="/sobre-nosotros" className={getNavLinkClass}>Sobre nosotros</NavLink>
-                    <NavLink to="/adn" className={getNavLinkClass}>Nuestro ADN</NavLink>
                     <NavLink to="/servicios" className={getNavLinkClass}>Servicios</NavLink>
                     <NavLink to="/proyectos" className={getNavLinkClass}>Proyectos</NavLink>
                 </div>

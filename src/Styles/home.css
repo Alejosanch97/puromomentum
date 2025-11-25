@@ -8,6 +8,13 @@
     --social-dot-color: #ff4a68;
 }
 
+body {
+    background-color: #1a1a1a; /* ¡Asegúrate de que esta línea esté presente! */
+    color: white; /* Para asegurar legibilidad */
+    margin: 0;
+    padding: 0;
+}
+
 /* ==================================================== */
 /* 1. ESTRUCTURA DEL SLIDER (VENTANA Y CINTA) */
 /* ==================================================== */
@@ -431,6 +438,1114 @@
 }
 .about-button:hover {
     background-color: #e53956;
+}
+
+/* ==================================================== */
+/* 6. SERVICIOS SECTION (IMAGEN 1 y 2) - NUEVA SECCIÓN */
+/* ==================================================== */
+
+.momentum-services-section {
+    background-color: #1a1a1a; /* Fondo oscuro (similar a la Imagen 1) */
+    color: white;
+    padding: 100px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.momentum-services-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* Activamos Flexbox para el layout de dos columnas en el encabezado */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Estilos de Encabezado (Columna Izquierda) */
+.services-header {
+    flex: 1; /* Ocupa el espacio disponible */
+    min-width: 40%; /* Asegura que ocupe al menos el 40% del ancho */
+    max-width: 60%; 
+    text-align: left; /* Alineamos a la izquierda */
+    margin-bottom: 60px;
+    padding-right: 40px; /* Espaciado con el bloque de texto intro */
+}
+
+.header-eyebrow {
+    font-size: 1rem;
+    font-weight: 600;
+    color: yellow; /* Color de acento */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.header-title {
+    font-size: 4rem; /* Hacemos el tamaño más responsivo y grande */
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.header-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0;
+    text-align: left;
+}
+
+/* Bloque de Texto Introductorio (Columna Derecha) */
+.services-intro-block {
+    flex: 1; /* Ocupa el espacio disponible restante */
+    min-width: 40%;
+    /* AJUSTE: Eliminar max-width y margin-left: auto para que ocupe todo el espacio */
+    /* y se alinee a la izquierda con el mismo padding que el título */
+    max-width: 50%; /* Permitimos que ocupe hasta la mitad */
+    margin-left: 0; /* Aseguramos que no haya margen automático */
+    margin-bottom: 80px;
+    text-align: left;
+    align-self: flex-start; 
+    /* AJUSTE: Eliminar padding-top para que inicie a la misma altura */
+    padding-top: 0; 
+}
+
+/* Subtítulo alineado bajo "creativa" */
+.intro-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    text-align: justify; 
+    font-size: 18px; 
+    line-height: 1.6; 
+    max-width: 100%; 
+    margin: 0; 
+    font-weight: 400; 
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.5px; 
+}
+
+/* AJUSTE: Resalte de "PURO MOMENTUM" y "funciona" a color rojo/accent */
+.intro-text strong.highlight {
+    font-weight: 700;
+    color: yellow; /* Cambiado de yellow a var(--accent-color) */
+}
+
+/* ESTILO PARA "escuchamos, comprendemos, analizamos" */
+.intro-process-step {
+    font-weight: 700;
+    color: var(--accent-color); 
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block; 
+    padding-bottom: 2px;
+    white-space: nowrap; 
+}
+
+
+/* Grid de Tarjetas */
+.services-cards-grid {
+    width: 100%; /* Ocupa todo el ancho debajo de las columnas */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card-item {
+    padding: 40px;
+    border-radius: 12px;
+    min-height: 350px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* --- CAMBIOS CRUCIALES PARA CENTRADO --- */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrado vertical */
+    align-items: center; /* Centrado horizontal del contenido */
+    text-align: center; /* Centrado horizontal del texto */
+    /* ------------------------------------- */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.service-card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-icon-container {
+    font-size: 3.5rem; 
+    margin-bottom: 20px;
+    line-height: 1; 
+}
+
+.card-title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.card-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8); 
+}
+
+.card-description {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* Paleta de Colores para Tarjetas (Ajuste basado en la Imagen 1, más oscuros para el fondo oscuro) */
+/* Estrategia (Similar al amarillo/dorado) */
+.card-strategy {
+    background-color: #ffc107; /* Amarillo oscuro */
+    color: black;
+}
+.card-strategy .card-subtitle, 
+.card-strategy .card-description,
+.card-strategy .card-icon-container {
+    color: rgba(0, 0, 0, 0.7);
+}
+.card-strategy .card-title {
+    color: black;
+}
+
+/* Dirección Cinematográfica (Similar al rojo) */
+.card-cinematography {
+    background-color: #dc3545; /* Rojo de acento */
+    color: white;
+}
+.card-cinematography .card-subtitle, 
+.card-cinematography .card-description,
+.card-cinematography .card-icon-container {
+    color: rgba(255, 255, 255, 0.7);
+}
+.card-cinematography .card-title {
+    color: white;
+}
+
+/* Eficiencia Operativa (Similar al blanco/gris en fondo oscuro) */
+.card-efficiency {
+    background-color: #343a40; /* Gris oscuro */
+    color: white;
+}
+.card-efficiency .card-subtitle, 
+.card-efficiency .card-description,
+.card-efficiency .card-icon-container {
+    color: rgba(255, 255, 255, 0.7);
+}
+.card-efficiency .card-title {
+    color: white;
+}
+
+/* ------------------------------------------- */
+/* --- NUEVA SECCIÓN: SHOWREEL (VIDEO) --- */
+/* ------------------------------------------- */
+
+/* Animación para el Título (Aparecer y subir sutilmente) */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        /* Aumentamos el desplazamiento a 80px para un efecto más notorio */
+        transform: translateY(80px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* NUEVA ANIMACIÓN para el Video (Aparecer desde transparente) */
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Contenedor principal de la sección */
+.showreel-section {
+    background-color: #f5f5f5; /* Fondo claro para contraste */
+    color: #1a1a1a;
+     padding: 75px 0 10px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* TÍTULO WRAPPER: Contenedor específico para centrar solo el título */
+.showreel-title-wrapper {
+    /* AUMENTAMOS el ancho máximo para que el título se vea más alargado */
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+    text-align: center; /* CENTRA EL TEXTO DEL TÍTULO */
+    margin-bottom: -60px; /* Espacio antes de que empiecen las dos columnas */
+}
+
+/* TÍTULO: Centrado y Animado */
+.showreel-title {
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 0.9;
+    margin: 0 auto 25px auto; /* Centra el elemento h2 y añade margen inferior */
+    text-transform: uppercase;
+    letter-spacing: -3px; 
+    
+    /* APLICAMOS ANIMACIÓN DE TÍTULO */
+    animation: fadeInSlideUp 1s ease-out; /* Título aparece con movimiento */
+}
+
+/* Wrapper principal para las 2 columnas (Subtítulo y Video) */
+.showreel-content-wrapper {
+    max-width: 1300px; /* Ancho más amplio para las dos columnas */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* FLEXBOX PARA 2 COLUMNAS */
+    align-items: center; /* Centrado vertical de las columnas */
+    gap: 70px; 
+}
+
+/* Contenedor del Texto (Izquierda - Columna 1) */
+.showreel-content {
+    flex: 1; /* Ocupa la proporción izquierda */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Alinea texto y botón a la izquierda */
+}
+
+/* CUERPO DEL TEXTO: Alineación justificada y letra más grande */
+.showreel-text {
+    /* Aumentamos el tamaño de la fuente para que sea más grande */
+    font-size: 1.75rem; 
+    font-weight: 500; 
+    line-height: 1.6; 
+    margin-bottom: 40px;
+    text-align: justify; /* JUSTIFICAMOS TODO EL TEXTO */
+    max-width: 100%;
+    
+    text-shadow: none;
+}
+
+/* Resaltes dentro del texto */
+.showreel-text .highlight,
+.showreel-text .underlined-keyword {
+    font-weight: 900; 
+    background-color: rgba(220, 53, 69, 0.2); 
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-decoration: none; 
+}
+
+.showreel-text strong {
+    font-weight: 900;
+}
+
+/* Estilo del Botón */
+.showreel-button {
+    background-color: #dc3545; 
+    color: white;
+    border: none;
+    padding: 18px 40px; 
+    font-size: 1.1rem; 
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 8px;
+    align-self: flex-start; /* Alinea el botón a la izquierda */
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.4); 
+}
+
+.showreel-button:hover {
+    background-color: #a72835; 
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.6); 
+    transform: translateY(-3px); 
+}
+
+/* Contenedor del Video (Derecha - Columna 2) */
+.showreel-video-container {
+    flex: 1.2; /* Mantenemos la proporción del video */
+    width: auto;
+    position: relative;
+    padding-bottom: 50%; 
+    height: 0;
+    overflow: hidden;
+    
+    /* Quitamos el contenedor: Eliminamos bordes y sombras */
+    border-radius: 29%;
+    box-shadow: none; 
+    
+    background-color: transparent; 
+    
+    /* APLICAMOS ANIMACIÓN DE VIDEO */
+    animation: fadeIn 1.5s ease-out 0.5s forwards; /* El video aparece 0.5s después del título */
+    opacity: 0; /* Inicia transparente para la animación */
+    
+    transition: none;
+    margin: 0;
+}
+
+/* También ajustamos el hover para que no haya transformación */
+.showreel-video-container:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.vimeo-embed-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==================================================== */
+/* 7. GALERÍA DE CONTENIDO CON INTENCIÓN (FINAL) */
+/* ==================================================== */
+
+.content-gallery-section {
+    /* Fondo oscuro consistente con --primary-background */
+    background-color: #1a1a1a; 
+    color: #ffffff;
+    padding: 80px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.content-gallery-wrapper {
+    /* Mantenemos el ancho máximo y el centrado del wrapper principal */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* 7.1. TÍTULO PRINCIPAL (Centrado) */
+.content-header {
+    /* Usamos margin: 0 auto; en este bloque para centrarlo dentro del wrapper */
+    /* Lo establecemos al 100% del ancho del wrapper para asegurar que el centrado sea absoluto */
+    max-width: 100%; 
+    width: 100%;
+    margin: 0 auto; /* <-- Clave para centrar el bloque */
+    text-align: center; /* <-- Clave para centrar el texto dentro del bloque */
+    margin-bottom: 50px;
+    padding: 0; /* Aseguramos que no haya padding que lo descentre */
+}
+
+.content-header .header-title {
+    /* Aseguramos que el texto esté centrado */
+    text-align: center; 
+    /* El resto de estilos se mantienen */
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+/* 7.2. TEXTO INTRODUCTORIO (Alineado a la Izquierda) */
+.content-intro-block {
+    /* Usamos margin-right: auto; para empujar el bloque a la izquierda */
+    max-width: 800px; 
+    margin-left: 0;   
+    margin-right: auto; 
+    margin-bottom: 60px;
+    padding: 0 20px;
+    
+    /* Alinea el texto a la izquierda dentro de su contenedor */
+    text-align: right; 
+}
+
+.content-intro-block .intro-text {
+    font-size: 22px; 
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85); 
+    font-weight: 400;
+}
+
+/* Estilo para los resaltes dentro del subtítulo (asumiendo que usan .intro-process-step) */
+.content-intro-block .intro-text .intro-process-step {
+    font-weight: 700;
+    color: var(--accent-color); /* Utiliza tu color de acento */
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 2px;
+}
+/* Mantenemos el strong por si acaso */
+.content-intro-block .intro-text strong {
+    font-weight: 700;
+}
+
+
+/* 7.3. CONTENEDOR DE LA GALERÍA (GRID) */
+.gallery-grid {
+    display: grid;
+    /* Cuadrícula de 4 columnas en desktop */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    padding: 0;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 350px; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden; 
+    position: relative; 
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    border-radius: 8px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra para destacar sobre fondo oscuro */
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Overlay sutil para la visibilidad del título */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end; 
+    padding: 20px;
+    opacity: 1; 
+    transition: background 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 60%);
+}
+
+.gallery-title {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s, transform 0.4s;
+}
+
+.gallery-item:hover .gallery-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ------------------------------------------- */
+/* --- RESPONSIVE / MEDIA QUERIES --- */
+/* ------------------------------------------- */
+
+@media (max-width: 1024px) {
+    /* Carrusel */
+    .hero-title {
+        font-size: 4rem;
+    }
+    .slide-2-title {
+        font-size: 3rem;
+    }
+
+    /* Sobre Nosotros */
+    .about-content-wrapper {
+        flex-direction: column;
+    }
+    .about-image-container {
+        min-height: 400px;
+        width: 100%;
+    }
+    .about-content {
+        width: 100%;
+        text-align: center;
+    }
+    .about-button {
+        align-self: center;
+    }
+
+    /* Servicios */
+    .services-header,
+    .services-intro-block {
+        flex: 0 0 100%; /* Ocupan todo el ancho en tablets */
+        max-width: 100%;
+        min-width: 100%;
+        text-align: center; /* Centramos el texto */
+        padding-right: 0;
+        margin-left: 0; /* Eliminamos el auto-margin en móvil */
+    }
+
+    .services-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .header-title {
+        font-size: 3rem;
+        text-align: center;
+    }
+    .intro-text {
+        text-align: justify; 
+        font-size: 1.3rem;
+        text-align: center; 
+    }
+    .intro-subtitle {
+        text-align: center;
+    }
+    .services-intro-block {
+        padding-top: 0; 
+    }
+    .intro-process-step {
+        white-space: normal; /* Permitir salto de línea en móvil si es necesario */
+    }
+}
+
+/* ==================================================== */
+/* 8. PROCESO CARRUSEL (4 PASOS) - NUEVA SECCIÓN */
+/* ==================================================== */
+
+.process-carousel-section {
+    position: relative;
+    /* Usamos el alto de la ventana visible para crear un slider de pantalla completa */
+    height: 100vh; 
+    width: 100%;
+    overflow: hidden; /* Oculta los slides que están fuera */
+    background-color: #000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------------------------------------------- */
+/* 8.1. HEADER FIJO (TÍTULO Y TEXTO INTRODUCTORIO) */
+/* ------------------------------------------- */
+
+.process-header {
+    position: relative;
+    z-index: 20; /* Asegura que esté sobre el carrusel */
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 60px 40px 0 40px; /* Padding superior, y lateral */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.process-header .header-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+    
+}
+
+.process-intro-text {
+    font-size: 1.1rem;
+    font-weight: 300;
+    max-width: 700px;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ------------------------------------------- */
+/* 8.2. CARRUSEL CONTENEDOR Y TRACK */
+/* ------------------------------------------- */
+
+.process-slider-container {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.process-slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* Transición suave para el cambio de paso */
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.process-slide-item {
+    min-width: 100%; /* Cada slide ocupa el 100% del ancho */
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------------------------------- */
+/* 8.3. FONDO DE IMAGEN Y OVERLAY (Efecto de movimiento) */
+/* ------------------------------------------- */
+
+.process-slide-item .slide-background {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%; /* Más grande que el contenedor para permitir el efecto Parallax/Zoom */
+    height: 110%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* La clave para el efecto visual: la transición en el fondo */
+    transition: all 12s ease-in-out; 
+    transform: scale(1);
+    z-index: 1;
+}
+
+/* Aplicar la animación de zoom sutil al fondo del slide activo */
+.process-slider-track .process-slide-item:nth-child(n + 1) .slide-background {
+    transform: scale(1.05);
+}
+
+/* Overlay oscuro para mejorar la visibilidad del texto */
+.process-slide-item .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background 0.5s;
+}
+
+/* ------------------------------------------- */
+/* 8.4. CONTENIDO DEL PASO (TEXTO) */
+/* ------------------------------------------- */
+
+.slide-content-text {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    padding: 40px;
+    text-align: center;
+    /* Animación de entrada de contenido */
+    animation: fadeInSlideUp 0.8s ease-out 0.2s forwards;
+    opacity: 0; /* Inicia invisible para la animación */
+}
+
+.slide-content-text .slide-title {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: var(--accent-color); /* Título en color de acento */
+}
+
+.slide-content-text .slide-description {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(252, 252, 252, 0.95);
+}
+
+.step-number-large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15rem; /* Número de paso grande y sutil */
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.08); /* Muy transparente */
+    z-index: -1;
+    pointer-events: none;
+    transition: color 0.5s;
+}
+
+/* ------------------------------------------- */
+/* 8.5. INDICADORES DE PAGINACIÓN (LATERAL DERECHO) */
+/* ------------------------------------------- */
+
+.process-indicators {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 30; /* Debe estar sobre el carrusel */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    pointer-events: auto; /* Permitir clicks */
+}
+
+.process-indicator-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s, transform 0.3s;
+    text-align: right;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.process-indicator-item:hover {
+    opacity: 0.8;
+    transform: translateX(-5px);
+}
+
+.process-indicator-item.active-step {
+    opacity: 1;
+    transform: translateX(-10px);
+}
+
+.indicator-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.indicator-title {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    /* Subrayado solo en el paso activo */
+    border-bottom: 2px solid transparent; 
+    transition: border-color 0.3s, color 0.3s;
+    padding-bottom: 2px;
+}
+
+.active-step .indicator-title {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* ==================================================== */
+/* 10. CARRUSEL DE MARCAS (BRANDS) */
+/* ==================================================== */
+
+.brand-carousel-section {
+    background-color: #ffffff;
+    padding: 80px 0; /* Espaciado vertical adecuado */
+    overflow: hidden; /* Oculta partes del carrusel que salen del contenedor */
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+}
+
+.brand-carousel-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.brand-section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.brand-section-title .highlight {
+    color: var(--accent-color); /* Asegúrate de que --accent-color esté definido en tu CSS global */
+}
+
+/* Contenedor del Slider que aplica el efecto de desvanecimiento lateral */
+.brand-slider-container {
+    width: 100%;
+    overflow: hidden;
+    /* Usamos mask-image para crear un efecto de desvanecimiento a los lados */
+    mask-image: linear-gradient(to right, 
+        transparent 0%, 
+        black 10%, /* El carrusel es visible a partir del 10% */
+        black 90%, /* El carrusel deja de ser visible después del 90% */
+        transparent 100%);
+}
+
+.brand-slider-track {
+    display: flex;
+    /* Propiedad para la animación de deslizamiento (controlada por JS/React inline style) */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+/* Contenedor individual de cada logo */
+.brand-slide-item {
+    /* Muestra 6 elementos en vista por defecto (Desktop) */
+    flex: 0 0 calc(100% / 6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Altura fija para centrado vertical */
+    padding: 0 20px;
+    
+    /* MANTENEMOS: Quitamos el outline */
+    outline: none; 
+    /* AÑADIDO: Quitamos cualquier borde y sombra que pueda generar el efecto */
+    border: none;
+    box-shadow: none;
+}
+
+.brand-slide-item:focus,
+.brand-slide-item:active,
+.brand-slide-item a:focus,
+.brand-slide-item button:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.brand-logo {
+    max-width: 100%;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    
+    /* *** CAMBIO CLAVE AQUÍ: APLICAMOS EL ESTILO DE HOVER COMO DEFAULT *** */
+    filter: grayscale(0%) brightness(1); /* Logo a color/brillo completo */
+    opacity: 1; /* Opacidad completa */
+    
+    transition: filter 0.3s, opacity 0.3s;
+    /* Aseguramos que la imagen misma no tenga un outline */
+    outline: none; 
+    /* Quitamos cualquier borde y sombra de la imagen */
+    border: none;
+    box-shadow: none;
+}
+
+.brand-logo:hover {
+    /* Efecto de logo encendido al pasar el mouse */
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+}
+
+/* Indicadores de navegación (Puntos) */
+.brand-navigation-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.brand-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.brand-dot.active {
+    background-color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* ==================================== */
+/* 🚀 SECCIÓN DE CONTACTO (FORMULARIO) */
+/* ==================================== */
+
+/* 1. Contenedor Principal de la Sección */
+.contact-section {
+    padding: 80px 0;
+    background-color: #000; 
+    color: #fff; 
+}
+
+/* 2. Contenedor del Split (Formulario + Imagen) - Ocupa todo el ancho */
+.contact-content-wrapper {
+    max-width: none; 
+    width: 100%; 
+    margin: 0; 
+    display: flex; 
+    align-items: stretch; 
+    min-height: 600px; 
+    border-radius: 0; 
+    overflow: hidden; 
+    background-color: #111; 
+    box-shadow: none; 
+}
+
+/* 3. COLUMNA DEL FORMULARIO (Izquierda) - Ocupa el 50% */
+.contact-form-container {
+    flex: 1; /* Vuelve a 50% */
+    padding: 60px 80px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    background-color: #1a1a1a; 
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: #fff; 
+}
+
+.contact-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.85); 
+}
+
+/* 4. COLUMNA DE LA IMAGEN (Derecha) - Ocupa el 50% con la Imagen más pequeña */
+.contact-image-container {
+    flex: 1; /* Ocupa el otro 50% del espacio */
+    position: relative;
+    /* ------------------------------------------------------------- */
+    /* TRUCO PARA REDUCIR EL TAMAÑO DE LA IMAGEN DENTRO DE SU MITAD: */
+    /* ------------------------------------------------------------- */
+    /* El padding empuja la imagen de fondo (aplicada en JSX) hacia el centro.
+     Los 'background-clip' y 'background-origin' son cruciales aquí.
+    */
+    padding: 60px; /* **AJUSTA ESTE VALOR** (e.g., 60px) para controlar el margen alrededor de la imagen. */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Aseguran que el background se recorte y se origine desde el contenido, no el padding */
+    background-origin: content-box; 
+    background-clip: content-box; 
+    
+    /* OPCIONAL: Añadir un fondo que se verá en el padding alrededor de la imagen */
+    background-color: #000; 
+}
+
+/* El overlay debe ajustarse al tamaño reducido por el padding */
+.contact-image-container .image-overlay {
+    position: absolute;
+    /* Ajustamos el top/bottom/left/right para que coincida con el padding */
+    top: 60px; 
+    bottom: 60px; 
+    left: 60px; 
+    right: 60px; 
+    
+    background: rgba(0, 0, 0, 0.1); 
+    z-index: 2; 
+    border-radius: 10px; /* Puedes darle un borde redondeado aquí para más estética */
+}
+
+/* ------------------------------------------------------------- */
+/* 5. Estilos del Formulario y sus Campos (Sin cambios) */
+/* ------------------------------------------------------------- */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #f0f0f0; 
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    padding: 15px;
+    border: 1px solid #333; 
+    border-radius: 5px;
+    background-color: #2e2e2e; 
+    color: #fff; 
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6); 
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color); 
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 74, 104, 0.5); 
+}
+
+.form-group textarea {
+    resize: vertical; 
+}
+
+/* 6. Estilos del Checkbox de Términos (Sin cambios) */
+.terms-checkbox {
+    flex-direction: row; 
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    margin-top: 5px;
+    accent-color: var(--accent-color); 
+    min-width: 16px;
+    min-height: 16px;
+}
+
+.terms-checkbox label {
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #f0f0f0; 
+}
+
+.terms-text {
+    display: block; 
+    font-size: 0.75rem;
+    opacity: 0.8; 
+    margin-top: 2px;
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+/* 7. Botón de Enviar (submit-button) (Sin cambios) */
+.submit-button {
+    padding: 18px 30px;
+    background-color: var(--accent-color); 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px; 
+}
+
+.submit-button:hover {
+    background-color: #e53956; 
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(255, 74, 104, 0.4);
 }
 
 /* Responsive */

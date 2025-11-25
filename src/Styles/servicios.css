@@ -1,0 +1,425 @@
+
+/* ================================================= */
+/* SERVICIOS.CSS - SECCIÓN 1: HERO/INTRODUCCIÓN INDEPENDIENTE CORREGIDA (Líneas de Título) */
+/* ================================================= */
+
+/* --- Variables (Asegúrate de que coincidan con tu Home.css) --- */
+:root {
+    --color-primary: #FF5733; 
+    --color-text-light: #FFFFFF; 
+    /* ... otras variables ... */
+}
+
+/* 1. Contenedor de la Sección Principal (Base sin cambios) */
+.services-main-hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden; 
+    color: var(--color-text-light); 
+}
+
+/* 2. Video de Fondo y Media Wrapper (sin cambios) */
+.services-media-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+
+.services-background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.services-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; 
+}
+
+/* 3. Contenido de Texto y Botón */
+.services-hero-content-wrapper {
+    position: relative;
+    z-index: 10; 
+    /* AJUSTE CLAVE: Aumentamos el max-width (de 750px) a un valor que fuerce 2 o 3 líneas. 
+       Probaremos con 850px, que es más cercano a tu valor original de 900px, 
+       pero el tamaño de fuente más grande ahora lo obligará a saltar. */
+    max-width: 1000px; 
+    text-align: center; 
+    padding: 0 5vw;
+}
+
+/* AJUSTE CLAVE: Título Principal */
+.services-hero-title {
+    /* Manteniendo el tamaño base y el máximo (4.0rem) */
+    font-size: clamp(2.1rem, 5.5vw, 4.0rem); 
+    line-height: 1.1; 
+    font-weight: 900; 
+    margin-bottom: 30px;
+    text-transform: uppercase; 
+}
+
+/* Estilos de las líneas individuales del título (sin cambios) */
+.services-hero-title .services-line-1,
+.services-hero-title .services-line-2 {
+    display: block; 
+    color: var(--color-text-light);
+    font-weight: 900;
+}
+
+
+/* AJUSTE CLAVE: Subtítulo (sin cambios) */
+.services-hero-subtitle {
+    font-size: 1.1rem; 
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    max-width: 650px; 
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9; 
+}
+
+/* RESALTADO CLAVE: Marca PURO MOMENTUM dentro del Subtítulo (sin cambios) */
+.services-hero-subtitle .services-brand-highlight {
+    color: var(--color-primary); 
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+/* Botón de Llamada a la Acción (sin cambios) */
+.services-hero-button {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    padding: 16px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px; 
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.services-hero-button:hover {
+    filter: brightness(1.1);
+}
+
+/* ================================================= */
+/* SERVICIOS.CSS - SECCIÓN 2: SISTEMA DE PROCESO (FINAL CORREGIDO) */
+/* ================================================= */
+
+/* --- Variables (Asegúrate de que coincidan con tu Home.css) --- */
+:root {
+    --color-primary: #FF5733; 
+    --color-system-card-bg: #D8432A; /* Rojo/Naranja Oscuro para las tarjetas */
+    --color-background-light: #F0F0E8; /* Fondo Gris/Beige Claro de la sección */
+    --color-text-dark: #333333;
+    --color-text-light: #FFFFFF; 
+}
+
+/* 1. Contenedor de la Sección Principal (Fondo gris claro) */
+.services-system-process-section {
+    background-color: var(--color-background-light); 
+    padding: 80px 5vw;
+    color: var(--color-text-dark);
+}
+
+.services-system-process-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 2. Encabezado de la Sección */
+.services-system-header {
+    margin-bottom: 50px;
+}
+
+/* Título de la Sección */
+.services-system-header-title {
+    font-size: clamp(2.5rem, 6vw, 4.2rem); 
+    font-weight: 900; 
+    margin-bottom: 20px;
+    color: var(--color-primary); 
+    line-height: 1.1;
+}
+
+.services-system-header-title .services-system-highlight {
+    color: var(--color-text-dark); 
+}
+
+/* Subtítulo Introductorio */
+.services-system-header-intro-text {
+    font-size: 1.1rem; /* Aumento del tamaño de fuente */
+    line-height: 1.6;
+    max-width: 800px; /* Aumento de ancho para justificación */
+    margin: 0 auto 20px;
+    text-align: justify; /* AJUSTE CLAVE: Justificar el texto */
+    text-justify: inter-word;
+}
+
+.services-system-header-intro-text .services-system-brand-highlight-black {
+    font-weight: 700;
+}
+
+/* 3. Grid de los 4 Pasos (Tarjetas) */
+.services-system-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* Estilo de la Tarjeta */
+.services-step-card {
+    background-color: var(--color-system-card-bg); 
+    color: var(--color-text-light);
+    padding: 40px;
+    text-align: left;
+    border-radius: 8px; 
+    min-height: 280px; /* Aumento de altura mínima para uniformidad */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.services-step-card:hover {
+    transform: translateY(-5px);
+}
+
+.services-card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-text-light); 
+    padding-bottom: 10px;
+}
+
+.services-card-description {
+    font-size: 1.05rem; /* AJUSTE CLAVE: Aumento del tamaño de fuente */
+    line-height: 1.6;
+    opacity: 0.9;
+    text-align: justify; /* AJUSTE CLAVE: Justificar el texto */
+    text-justify: inter-word;
+}
+
+
+/* 4. Texto Inferior (Footer de la Sección) */
+.services-system-footer-text {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.services-system-footer-text .services-uppercase-text {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-dark);
+}
+
+
+/* ================================================= */
+/* SERVICIOS.CSS - SECCIÓN 3: NIVELES DE ACOMPAÑAMIENTO (FINAL CORREGIDO) */
+/* ================================================= */
+
+:root {
+    --color-primary: #FF5733; 
+    --color-background-dark: #1A1A1A; 
+    --color-card-light-bg: #BDBDBD; 
+    --color-text-dark: #333333; 
+    --color-text-light: #FFFFFF; 
+}
+
+/* 1. Contenedor de la Sección Principal */
+.services-accompaniment-levels-section {
+    background-color: var(--color-background-dark); 
+    padding: 80px 5vw;
+    color: var(--color-text-light); 
+}
+
+.services-levels-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 2. Encabezado de la Sección */
+.services-levels-header-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 50px;
+    line-height: 1.2;
+}
+
+.services-levels-header-title .services-levels-highlight {
+    color: var(--color-primary); 
+    font-weight: 900;
+}
+
+/* 3. Grid de las 3 Tarjetas de Nivel */
+.services-levels-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+/* Estilo de la Tarjeta */
+.services-level-card {
+    background-color: var(--color-card-light-bg); 
+    color: var(--color-text-dark);
+    border-radius: 20px; 
+    padding: 40px 30px;
+    min-height: 600px; /* AJUSTE CLAVE: Forzar una altura mínima para uniformidad */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); 
+    
+    /* AJUSTE CLAVE: Usar Flexbox para mejor control del contenido */
+    display: flex; 
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Icono/Forma geométrica */
+.services-card-shape-icon {
+    /* Mantenemos el contenedor de 100px de alto */
+    height: 100px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    color: var(--color-text-dark); 
+    font-size: 5rem; 
+    line-height: 1;
+}
+
+.services-card-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.services-card-body {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    
+    /* AJUSTE CLAVE: Permite que el cuerpo del texto crezca para llenar el espacio, 
+       empujando el beneficio hacia abajo si es necesario */
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para separar descripción y beneficio */
+    text-align: justify; /* Justificar el texto */
+    text-justify: inter-word;
+}
+
+.services-card-description {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.services-card-benefit {
+    font-size: 0.95rem;
+    color: var(--color-primary); 
+    text-align: center; 
+    margin-top: auto; 
+    /* AJUSTE CLAVE: Aplicamos la negrita directamente al contenedor del beneficio */
+    font-weight: 800; 
+}
+
+.services-card-benefit strong {
+    /* Mantenemos por si acaso se usa doble negrita, pero la principal ya está arriba */
+    font-weight: 800; 
+}
+
+/* ================================================= */
+/* SERVICIOS.CSS - SECCIÓN 4: LLAMADA A LA ACCIÓN / CONTACTO FINAL */
+/* ================================================= */
+
+:root {
+    /* Reutilizando variables de secciones anteriores */
+    --color-primary: #FF5733;         /* Naranja/Rojo del botón y resaltes */
+    --color-background-white: #FFFFFF; /* Fondo Blanco */
+    --color-text-dark: #333333;       /* Texto oscuro principal */
+    --color-text-medium: #666666;     /* Texto secundario/descripción */
+}
+
+/* 1. Contenedor de la Sección Principal (Fondo blanco) */
+.services-contact-cta-section {
+    background-color: var(--color-background-white); 
+    padding: 100px 5vw; /* Padding generoso */
+    color: var(--color-text-dark);
+    text-align: center;
+}
+
+.services-cta-content-wrapper {
+    max-width: 800px; /* Ancho máximo para el contenido centrado */
+    margin: 0 auto;
+}
+
+/* 2. Título Principal (Grande y llamativo) */
+.services-cta-title {
+    /* AJUSTE CLAVE: Fuente grande para máximo impacto */
+    font-size: clamp(2.5rem, 6vw, 4.5rem); 
+    font-weight: 800; /* Extra bold */
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.services-cta-title .services-highlight-text {
+    /* Resalta la palabra clave con color primario */
+    color: var(--color-primary); 
+}
+
+/* 3. Texto Secundario / Descripción */
+.services-cta-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text-medium);
+    margin-bottom: 40px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-cta-description .services-highlight-text {
+    /* Asegura que los textos resaltados dentro de la descripción también sean negrita/impacto */
+    color: var(--color-text-dark); 
+    font-weight: 700;
+}
+
+/* 4. Botón de Llamada a la Acción (CTA) */
+.services-cta-button {
+    background-color: var(--color-primary); 
+    color: var(--color-text-light); /* Asumiendo que el texto del botón es blanco */
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 6px; /* Bordes suaves */
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.services-cta-button:hover {
+    background-color: #E6492A; /* Tono ligeramente más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}

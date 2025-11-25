@@ -1,0 +1,119 @@
+/* ==================================== */
+/* 🦶 FOOTER (Agencia INusual) */
+/* ==================================== */
+
+/* Color Principal (Amarillo Mostaza) */
+:root {
+    --footer-background: #e6c757; /* Color Amarillo/Mostaza de la imagen */
+    --footer-text-color: #000;    /* Texto negro para contraste */
+    --primary-background: #1a1a1a; /* Tu color de fondo primario */
+}
+
+/* Aplicamos el radio y la separación al contenedor principal */
+.footer-section {
+    width: 100%;
+    /* Aplicamos el color de fondo y el padding vertical */
+    background-color: var(--footer-background);
+    padding: 60px 0; 
+    
+    /* ------------------------------------------- */
+    /* 🚀 CAMBIOS CLAVE */
+    /* ------------------------------------------- */
+    
+    /* 1. AUMENTAMOS CURVATURA */
+    border-top-left-radius: 40px; 
+    border-top-right-radius: 40px; 
+    
+    /* 2. MARGEN SUPERIOR para exponer el fondo de la sección anterior */
+    /* Esto es clave para que se vea el corte. El fondo detrás del footer
+       debe ser el color --primary-background: #1a1a1a; */
+    margin-top: 40px; /* Asegura que la curva se vea con el fondo negro/gris oscuro */
+}
+
+.footer-content-wrapper {
+    /* Contenedor central (simulando el ancho máximo del sitio) */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px; 
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* ------------------ */
+/* LADO IZQUIERDO (Logo y Texto) */
+/* ------------------ */
+.footer-left {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    color: var(--footer-text-color);
+}
+
+.footer-logo-container {
+    max-width: 200px; 
+    margin-bottom: 5px; 
+}
+
+.footer-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.footer-copyright {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0; 
+}
+
+
+/* ------------------ */
+/* LADO DERECHO (Sociales) */
+/* ------------------ */
+.footer-social-links {
+    display: flex;
+    gap: 20px; 
+}
+
+.footer-social-links a {
+    color: var(--footer-text-color); 
+    font-size: 1.5rem; 
+    transition: color 0.3s;
+}
+
+.footer-social-links a:hover {
+    color: #333; 
+}
+
+
+/* ------------------ */
+/* Responsive */
+/* ------------------ */
+@media (max-width: 768px) {
+    .footer-section {
+        /* Reducimos la curvatura en móvil */
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: 20px; /* Menor margen en móvil */
+    }
+    
+    .footer-content-wrapper {
+        flex-direction: column; 
+        text-align: center;
+    }
+    
+    .footer-left {
+        align-items: center; 
+        margin-bottom: 30px;
+    }
+
+    .footer-logo-container {
+        max-width: 150px; 
+    }
+    
+    .footer-social-links {
+        margin-top: 20px;
+    }
+}
