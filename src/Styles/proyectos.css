@@ -312,3 +312,223 @@
     height: 100%;
     object-fit: cover; /* Asegura que el video cubra el contenedor */
 }
+
+/* ==================================================== */
+/* MEDIA QUERIES (RESPONSIVE) - PROYECTOS (VERSIÓN FINAL CONSOLIDADA) */
+/* ==================================================== */
+
+/* ---------------------------------------------------- */
+/* 1. ESTILOS PARA TABLETAS (Hasta 1024px) */
+/* ---------------------------------------------------- */
+@media (max-width: 1024px) {
+    /* AJUSTE DE ESPACIADO GENERAL */
+    .projects-list-wrapper,
+    .projects-recap-wrapper,
+    .projects-hero-content-wrapper {
+        padding: 0 4vw;
+    }
+    
+    /* === 1.1. SECCIÓN HERO/INTRODUCCIÓN === */
+    .projects-main-hero-section {
+        min-height: 500px;
+    }
+
+    .projects-media-wrapper {
+        filter: blur(1.5px);
+        transform: scale(1.01);
+    }
+    
+    .projects-hero-title {
+        font-size: clamp(2.5rem, 8vw, 6rem); 
+    }
+    
+    .projects-hero-title .projects-line-1 {
+        letter-spacing: 3px; 
+    }
+    
+    .projects-hero-subtitle {
+        font-size: 1.1rem;
+        max-width: 90%;
+    }
+
+
+    /* === 1.2. SECCIÓN LISTA DE PROYECTOS - CORRECCIÓN DE SUPERPOSICIÓN === */
+    .projects-list-section {
+        padding: 80px 0;
+    }
+    
+    .projects-section-title {
+        font-size: clamp(2.5rem, 6vw, 4rem); 
+        margin-bottom: 15px;
+    }
+
+    .projects-section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 60px;
+    }
+
+    /* Layout clave: FORZAMOS EL APILAMIENTO DE COLUMNAS */
+    .projects-grid-container {
+        /* GAP entre PROYECTOS COMPLETOS */
+        gap: 120px; 
+    }
+    
+    .projects-grid-item {
+        /* Se convierte en una sola columna */
+        grid-template-columns: 1fr; 
+        /* CORRECCIÓN FORZADA: GAP interno para separar Video y Tarjeta, resolviendo solapamiento */
+        gap: 50px !important; 
+        grid-template-areas: none !important; /* Neutralizamos áreas de grid */
+        flex-direction: column !important; 
+        width: 100%;
+        display: flex; /* Forzamos flexbox para que 'order' funcione mejor */
+    }
+    
+    /* NEUTRALIZACIÓN DE LAYOUT INVERSO */
+    .projects-grid-item.project-layout-reversed {
+        grid-template-areas: none !important; 
+    }
+    
+    /* CORRECCIÓN: ORDEN UNIFORME - TARJETA (1), VIDEO (2) */
+    .projects-grid-item .projects-info-card {
+        grid-area: auto;
+        order: 1 !important; /* Tarjeta de info siempre ARRIBA */
+        padding: 40px; 
+        width: 100% !important; 
+        height: auto !important;
+    }
+    .projects-grid-item .projects-video-container {
+        grid-area: auto;
+        order: 2 !important; /* Video siempre ABAJO */
+        width: 100% !important;
+        margin-top: 0 !important; /* Aseguramos margen limpio */
+    }
+    
+    .projects-info-title {
+        font-size: 2rem;
+    }
+    
+    /* === 1.3. SECCIÓN RECAP ANUAL === */
+    .projects-recap-section {
+        padding: 80px 0;
+    }
+    
+    .projects-recap-title {
+        font-size: clamp(2rem, 5vw, 3.5rem); 
+        margin-bottom: 40px;
+    }
+
+    .projects-recap-description {
+        font-size: 1rem;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* 2. ESTILOS PARA CELULARES (Hasta 768px) */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+    /* AJUSTE DE ESPACIADO GENERAL */
+    .projects-list-wrapper,
+    .projects-recap-wrapper,
+    .projects-hero-content-wrapper {
+        padding: 0 15px;
+    }
+
+    /* === 2.1. SECCIÓN HERO/INTRODUCCIÓN === */
+    .projects-main-hero-section {
+        min-height: 400px; 
+    }
+    
+    .projects-media-wrapper {
+        filter: blur(1px);
+    }
+    
+    .projects-hero-title {
+        font-size: clamp(2rem, 12vw, 5rem); 
+    }
+
+    .projects-hero-title .projects-line-1 {
+        letter-spacing: 2px; 
+        font-size: 0.7em;
+    }
+    
+    .projects-hero-subtitle {
+        font-size: 0.95rem;
+        margin-top: 20px;
+    }
+    
+    /* === 2.2. SECCIÓN LISTA DE PROYECTOS - CORRECCIÓN DE SUPERPOSICIÓN === */
+    .projects-list-section {
+        padding: 60px 0;
+    }
+
+    .projects-section-title {
+        font-size: 2.2rem;
+    }
+
+    .projects-section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 40px;
+    }
+
+    .projects-grid-container {
+        /* GAP entre PROYECTOS COMPLETOS en móvil */
+        gap: 80px; 
+    }
+    
+    /* Layout: Aseguramos el apilamiento de video y texto */
+    .projects-grid-item {
+        grid-template-columns: 1fr; 
+        /* CORRECCIÓN FORZADA: GAP interno para móvil (evita superposición) */
+        gap: 30px !important; 
+        grid-template-areas: none !important;
+        flex-direction: column !important;
+        width: 100%;
+        display: flex; /* Forzamos flexbox para que 'order' funcione mejor */
+    }
+    
+    /* NEUTRALIZACIÓN DE LAYOUT INVERSO */
+    .projects-grid-item.project-layout-reversed {
+        grid-template-areas: none !important; 
+    }
+    
+    .projects-info-title {
+        font-size: 1.8rem;
+    }
+
+    .projects-info-subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+
+    /* CORRECCIÓN: ORDEN UNIFORME - TARJETA (1), VIDEO (2) */
+    .projects-grid-item .projects-info-card {
+        order: 1 !important; /* Tarjeta de info siempre ARRIBA */
+        padding: 30px; 
+        width: 100% !important; 
+        height: auto !important;
+    }
+    .projects-grid-item .projects-video-container {
+        order: 2 !important; /* Video siempre ABAJO */
+        width: 100% !important;
+        margin-top: 0 !important; /* Aseguramos margen limpio */
+    }
+
+    /* === 2.3. SECCIÓN RECAP ANUAL === */
+    .projects-recap-section {
+        padding: 60px 0;
+    }
+    
+    .projects-recap-title {
+        font-size: 2rem; 
+        margin-bottom: 30px;
+    }
+
+    .projects-recap-description {
+        font-size: 0.95rem;
+    }
+    
+    .projects-recap-video-container {
+        margin-bottom: 30px;
+    }
+}

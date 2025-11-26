@@ -1,57 +1,103 @@
 import { useState, useEffect } from 'react'; 
-import { NavLink, Link } from "react-router-dom"; 
+// Importa el ícono, si usas react-icons. Ejemplo con FaBars:
+// import { FaBars, FaTimes } from 'react-icons/fa'; 
+// Si no, usaremos un div o button simple.
+
+import { NavLink, Link} from "react-router-dom"; 
+import { HashLink } from "react-router-hash-link";
 import "../Styles/navbar.css";
-// Asegúrate de que esta ruta sea correcta para tu logo
 import logo from "../assets/img/logo.png"; 
 
 export const Navbar = () => {
-    // Estado para controlar si se ha hecho scroll
     const [scrolled, setScrolled] = useState(false); 
+    // ✨ NUEVO ESTADO: Controla si el menú móvil está abierto
+    const [menuOpen, setMenuOpen] = useState(false); 
 
-    // Lógica para manejar el evento de scroll
     useEffect(() => {
+        // ... (Tu lógica existente para handleScroll)
         const handleScroll = () => {
-            // Si el desplazamiento vertical es mayor a 50px, se activa la clase 'scrolled'
             const isScrolled = window.scrollY > 50; 
             if (isScrolled !== scrolled) {
                 setScrolled(isScrolled);
             }
         };
 
-        // Añadir el event listener al montar el componente
         window.addEventListener('scroll', handleScroll);
-
-        // Limpiar el event listener al desmontar el componente (buena práctica)
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [scrolled]);
     
+    // ✨ NUEVA FUNCIÓN: Para alternar el estado del menú
+    const handleMenuToggle = () => {
+        setMenuOpen(!menuOpen);
+    };
+    
     // Función para determinar la clase activa de NavLink
     const getNavLinkClass = ({ isActive }) => 
         `nav-item ${isActive ? "active-link" : ""}`;
-
+        
+    // ✨ NUEVA FUNCIÓN: Para cerrar el menú al hacer clic en un enlace (útil en móvil)
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+    
     return (
-        // Aplicamos la clase 'scrolled' condicionalmente
         <nav className={`custom-navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-container">
-                {/* Logo o Nombre de la Marca */}
-                <Link to="/" className="navbar-logo">
+                <HashLink to="/#top" className="navbar-logo" onClick={closeMenu}> 
                     <img src={logo} alt="Puro Momentum Logo" className="logo" /> 
-                </Link>
+                </HashLink>
 
-                {/* Enlaces de Navegación */}
-                <div className="navbar-links">
-                    <NavLink to="/" className={getNavLinkClass}>Inicio</NavLink>
-                    <NavLink to="/sobre-nosotros" className={getNavLinkClass}>Sobre nosotros</NavLink>
-                    <NavLink to="/servicios" className={getNavLinkClass}>Servicios</NavLink>
-                    <NavLink to="/proyectos" className={getNavLinkClass}>Proyectos</NavLink>
+                {/* ✨ BOTÓN DE HAMBURGUESA: visible solo en móvil (estilo en CSS) */}
+                <button className="menu-toggle" onClick={handleMenuToggle} aria-label="Abrir menú">
+                    {/* Puedes usar íconos, o simplemente tres barras (estilizadas en CSS) */}
+                    {menuOpen ? (
+                        <div className="icon-close">X</div> // O <FaTimes />
+                    ) : (
+                        <div className="icon-menu">☰</div> // O <FaBars />
+                    )}
+                </button>
+
+
+                {/* Enlaces de Navegación: Añadimos la clase 'open' si menuOpen es true */}
+                <div className={`navbar-links ${menuOpen ? 'open' : ''}`}> 
+                    <HashLink to="/#top" className="nav-item" onClick={closeMenu}>Inicio</HashLink> 
+                    
+                    <HashLink 
+                        to="/#sobre-nosotros" 
+                        className="nav-item"
+                        scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })} 
+                        onClick={closeMenu}
+                    >
+                        Sobre nosotros
+                    </HashLink>
+                    
+                    <NavLink to="/servicios" className={getNavLinkClass} onClick={closeMenu}>Servicios</NavLink>
+                    <NavLink to="/proyectos" className={getNavLinkClass} onClick={closeMenu}>Proyectos</NavLink>
+                    
+                    {/* Botón de Contacto (Duplicado o movido para que esté dentro del menú móvil si es necesario) */}
+                    <HashLink 
+                        to="/#contacto" 
+                        className="nav-button-link nav-button-mobile" // Clase extra para control en móvil
+                        scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })} 
+                        onClick={closeMenu}
+                    >
+                        <button className="nav-button">Contacto</button>
+                    </HashLink>
                 </div>
 
-                {/* Botón de Contacto */}
-                <Link to="/contacto" className="nav-button-link">
-                    <button className="nav-button">Contacto</button>
-                </Link>
+                {/* Se mantiene el botón de Contacto fuera de navbar-links para desktop si lo quieres fijo a la derecha */}
+                {/* Lo envolvemos en un fragmento o lo dejamos como estaba si queremos ocultar la versión de escritorio en móvil */}
+                <div className="navbar-button-desktop">
+                    <HashLink 
+                        to="/#contacto" 
+                        className="nav-button-link"
+                        scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })} 
+                    >
+                        <button className="nav-button">Contacto</button>
+                    </HashLink>
+                </div>
             </div>
         </nav>
     );

@@ -1,4 +1,8 @@
 import React from "react";
+// 🚨 Importamos Link y HashLink para la navegación
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+
 // Importamos los estilos y el video para mantener la coherencia
 import "../Styles/servicios.css"; 
 import moveMp4 from "../assets/img/move2.mp4"; 
@@ -86,8 +90,11 @@ export const Servicios = () => {
                     <p className="services-hero-subtitle">
                         <strong className="services-brand-highlight">PURO MOMENTUM</strong> es el impulso creativo que potencia tu visión. Definimos la estrategia y creamos contenido con propósito, estética y dirección para que tu marca avance con fuerza.
                     </p>
-
-                    <button className="services-hero-button">VER NUESTROS PROYECTOS</button>
+                    
+                    {/* 🚨 BOTÓN 1: "VER NUESTROS PROYECTOS" -> /proyectos (Usando Link) */}
+                    <Link to="/proyectos" className="services-hero-button">
+                        VER NUESTROS PROYECTOS
+                    </Link>
                 </div>
             </section>
             
@@ -161,10 +168,14 @@ export const Servicios = () => {
                         Nosotros convertiremos esa intención en <strong className="services-highlight-text">dirección</strong> y <strong className="services-highlight-text">resultados</strong>.
                     </p>
 
-                    {/* Botón de Llamada a la Acción (CTA) */}
-                    <button className="services-cta-button">
+                    {/* 🚨 BOTÓN 2: "Conversemos" -> /#contacto (Usando HashLink) */}
+                    <HashLink 
+                        to="/#contacto" 
+                        className="services-cta-button"
+                        scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                    >
                         Conversemos
-                    </button>
+                    </HashLink>
                 </div>
             </section>
         </main>

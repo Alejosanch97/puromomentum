@@ -1548,11 +1548,515 @@ body {
     box-shadow: 0 4px 10px rgba(255, 74, 104, 0.4);
 }
 
-/* Responsive */
+/* --- ESTILOS DEL TOAST DE NOTIFICACIÓN --- */
+.toast-notification {
+    position: fixed; /* Lo mantiene visible aunque el usuario haga scroll */
+    bottom: 30px; /* Separación del borde inferior */
+    right: 30px; /* Separación del borde derecho */
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Arial', sans-serif; /* O la fuente que uses en tu web */
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    min-width: 300px;
+    transform: translateY(0); /* Estado inicial (visible) */
+}
+
+/* Clases específicas de color */
+.toast-success {
+    background-color: #28a745; /* Verde de éxito */
+    color: white;
+}
+
+.toast-error {
+    background-color: #dc3545; /* Rojo de error */
+    color: white;
+}
+
+.toast-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.toast-content {
+    flex-grow: 1;
+}
+
+.toast-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.toast-message {
+    margin: 3px 0 0;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.toast-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    line-height: 1;
+}
+
+.toast-close-btn:hover {
+    opacity: 1;
+}
+
+/* ==================================================== */
+/* MEDIA QUERIES (RESPONSIVE) - ESTILOS CORREGIDOS */
+/* ==================================================== */
+
+/* ---------------------------------------------------- */
+/* 1. ESTILOS PARA TABLETAS (Hasta 1024px) */
+/* ---------------------------------------------------- */
 @media (max-width: 1024px) {
-    .social-links, .slider-indicators { display: none; }
-    .hero-content.split-content { flex-direction: column; text-align: center; }
-    .split-text-container { padding: 0; max-width: 100%; margin-bottom: 30px; }
-    .hero-title { font-size: 8vw; }
-    .about-section { flex-direction: column; }
+    /* AJUSTE GENERAL DE ESPACIADO */
+    .hero-content, 
+    .about-content-wrapper, 
+    .momentum-services-wrapper, 
+    .showreel-title-wrapper,
+    .showreel-content-wrapper, 
+    .content-gallery-wrapper, 
+    .brand-carousel-wrapper {
+        padding: 0 20px;
+    }
+
+    /* === 1.1. CARRUSEL PRINCIPAL (HERO) - CORREGIDO === */
+    .hero-title {
+        /* Reducimos el tamaño relativo para que el texto NO desborde */
+        font-size: 7vw; 
+    }
+    .hero-title.multi-line {
+        align-items: center;
+    }
+    .slide-2-title {
+        font-size: 5.5vw;
+    }
+    .hero-subtitle {
+        font-size: 16px; 
+    }
+    
+    /* Ocultamos los controles fijos en tablet (Esencial) */
+    .social-links, 
+    .slider-indicators { 
+        display: none; 
+    }
+
+    /* Layout Split (Slide 2) */
+    .hero-content.split-content {
+    flex-direction: column; /* Apilamos en tabletas */
+    text-align: center;
+    justify-content: center; /* Centramos el contenido verticalmente */
+    padding-top: 50px; /* Aseguramos un poco de espacio superior */
+    padding-bottom: 50px;
+}
+    .split-text-container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 90%; /* Centrado y limitando un poco el ancho */
+    margin: 0 auto 40px auto; /* Centramos el bloque */
+    order: 1;
+}
+    .split-media-container {
+    max-width: 90%;
+    margin: 0 auto;
+    order: 2;
+}
+.split-media-container-img {
+    height: 350px; /* Reducción ligera de altura */
+    width: 100%;
+    /* Aseguramos que la imagen no tenga un background-size fijo que la corra */
+    background-size: cover; 
+}
+
+
+    /* === 1.2. SECCIÓN SOBRE NOSOTROS (ABOUT) === */
+    .about-content-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .about-content {
+        width: 100%;
+        text-align: center;
+        order: 1; 
+    }
+    .about-title {
+        font-size: 40px;
+    }
+    .about-text {
+        font-size: 18px;
+        text-align: center; 
+    }
+    .about-image-container {
+        min-height: 400px;
+        width: 100%;
+        order: 2; 
+    }
+    .about-button {
+        align-self: center;
+    }
+
+
+    /* === 1.3. SECCIÓN SERVICIOS === */
+    .services-header,
+    .services-intro-block {
+        flex: 0 0 100%; 
+        max-width: 100%;
+        min-width: 100%;
+        text-align: center; 
+        padding-right: 0;
+        margin-left: 0; 
+        margin-bottom: 30px;
+    }
+    .header-title {
+        font-size: 3rem;
+        text-align: center;
+    }
+    .intro-text, .intro-subtitle {
+        text-align: center; 
+        font-size: 1.1rem;
+    }
+    .services-cards-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+    .intro-process-step {
+        white-space: normal;
+    }
+
+    /* === 1.4. SECCIÓN SHOWREEL (VIDEO) - CORREGIDO === */
+    .showreel-title-wrapper {
+        margin-bottom: 20px;
+    }
+    .showreel-title {
+        /* Reducimos significativamente para que quepa en el ancho */
+        font-size: 4rem; 
+        letter-spacing: -2px;
+    }
+    .showreel-content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .showreel-content {
+        order: 2; /* Texto abajo */
+        align-items: center;
+        padding: 0 20px;
+    }
+    .showreel-text {
+        font-size: 1.2rem;
+        text-align: center; /* Centramos el texto para que fluya mejor */
+        max-width: 600px;
+    }
+    .showreel-button {
+        align-self: center; 
+    }
+    .showreel-video-container {
+        order: 1; /* Video arriba */
+        width: 90%;
+        padding-bottom: 56.25%; 
+        flex: none;
+    }
+
+    /* === 1.5. SECCIÓN GALERÍA DE CONTENIDO === */
+    .content-header .header-title {
+        font-size: 40px;
+    }
+    .content-intro-block {
+        max-width: 100%;
+        margin: 0 auto 40px auto; 
+        text-align: center;
+    }
+    .content-intro-block .intro-text {
+        font-size: 18px;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+    
+    /* === 1.6. PROCESO CARRUSEL - CORREGIDO === */
+    .process-header {
+        padding: 40px 20px 0 20px;
+    }
+    .process-header .header-title {
+        font-size: 3rem;
+    }
+    .process-intro-text {
+        font-size: 1rem;
+    }
+    .process-indicators {
+        display: none; 
+    }
+    .slide-content-text {
+        padding: 20px;
+        max-width: 90%;
+    }
+    .slide-content-text .slide-title {
+        /* Reducimos para que quepa bien en el centro */
+        font-size: 3rem; 
+    }
+    .slide-content-text .slide-description {
+        font-size: 1.2rem;
+    }
+    .step-number-large {
+        font-size: 10rem;
+    }
+
+
+    /* === 1.7. CARRUSEL DE MARCAS === */
+    .brand-section-title {
+        font-size: 2rem;
+    }
+    .brand-slide-item {
+        flex: 0 0 calc(100% / 4); 
+    }
+    .brand-slider-container {
+        mask-image: linear-gradient(to right, 
+            transparent 0%, 
+            black 15%, 
+            black 85%, 
+            transparent 100%);
+    }
+
+    /* === 1.8. SECCIÓN DE CONTACTO - CORREGIDO === */
+    .contact-content-wrapper {
+        flex-direction: column; 
+        min-height: auto;
+    }
+    .contact-form-container {
+        /* Aumentamos el padding para que no se vea tan pegado a los bordes del celular */
+        padding: 40px 40px; 
+    }
+    .contact-title {
+        font-size: 2rem;
+    }
+    .contact-image-container {
+        min-height: 400px; 
+        padding: 40px; 
+    }
+    .contact-image-container .image-overlay {
+        top: 40px; 
+        bottom: 40px; 
+        left: 40px; 
+        right: 40px; 
+    }
+    
+    /* === 1.9. TOAST DE NOTIFICACIÓN === */
+     .toast-notification {
+        right: auto;
+        left: 30px;
+        min-width: 90%;
+    }
+}
+
+
+/* ---------------------------------------------------- */
+/* 2. ESTILOS PARA CELULARES (Hasta 768px) */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+    /* AJUSTE GENERAL DE ESPACIADO */
+    .hero-content {
+    padding: 0 15px;
+    /* AJUSTE CLAVE: Aumentamos el padding superior e inferior para centrar verticalmente */
+    padding-top: 100px; /* Aumentar este valor si necesitas que baje más */
+    padding-bottom: 50px;
+    /* Aseguramos que el logo no interfiera con el padding */
+    position: relative; 
+}
+    
+    .about-content-wrapper, 
+    .momentum-services-wrapper, 
+    .showreel-title-wrapper,
+    .showreel-content-wrapper, 
+    .content-gallery-wrapper, 
+    .brand-carousel-wrapper {
+        padding: 0 15px; 
+    }
+    
+    /* === 2.1. CARRUSEL PRINCIPAL (HERO) - CORREGIDO === */
+    .hero-title {
+    /* Mantenemos el ajuste anterior que funcionó para Slide 1 */
+    font-size: 9vw; 
+    line-height: 1.1; /* Ajuste ligero */
+    text-align: center; 
+}
+    .hero-title.multi-line {
+        align-items: center; 
+    }
+    .slide-2-title {
+    /* Ajuste para que el título del Slide 2 se vea bien en móvil */
+    font-size: 7vw; 
+    line-height: 1.1;
+    margin-bottom: 15px; /* Reducimos el margen */
+}
+.slide-2-title {
+    text-align: center;
+    line-height: 1.1; 
+}
+    .hero-subtitle {
+    font-size: 1rem; /* Aseguramos que el texto del subtítulo sea legible */
+    max-width: 90%;
+    margin: 0 auto 30px auto;
+}
+
+.hero-subtitle {
+    text-align: center;
+    margin: 0 auto 30px auto;
+}
+
+.hero-content.split-content {
+    /* Mantenemos las propiedades de apilamiento */
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; /* ESTO CENTRA EL TEXTO DEL SUBTÍTULO Y EL BOTÓN */
+    padding-top: 100px; /* Ajustar según sea necesario */
+    padding-bottom: 100px;
+}
+/* Forzamos el texto de la caja a centrarse */
+.split-text-container {
+    text-align: center;
+    max-width: 90%; /* Aseguramos que el contenedor no sea demasiado ancho */
+    margin: 0 auto 30px auto;
+}
+.split-media-container {
+    display: none; 
+}
+
+.split-media-container-img {
+    height: 250px; /* Altura más compacta para móvil */
+    width: 100%;
+}
+    
+    /* === 2.2. SECCIÓN SOBRE NOSOTROS (ABOUT) === */
+    .about-title {
+        font-size: 30px;
+    }
+    .about-text {
+        font-size: 16px;
+    }
+    .about-image-placeholder {
+        height: 250px;
+    }
+
+    /* === 2.3. SECCIÓN SERVICIOS === */
+    .services-cards-grid {
+        grid-template-columns: 1fr; /* 1 columna en celular */
+    }
+    .header-title {
+        font-size: 2rem;
+    }
+    .intro-text {
+        font-size: 1rem;
+    }
+    .service-card-item {
+        min-height: 250px;
+        padding: 30px 20px;
+    }
+
+    /* === 2.4. SECCIÓN SHOWREEL (VIDEO) - CORREGIDO === */
+    .showreel-title {
+        /* Reducción máxima para que quepa en el ancho */
+        font-size: 2.3rem; 
+        letter-spacing: -1px;
+    }
+    .showreel-text {
+        font-size: 1rem;
+        /* Aseguramos que el texto fluya sin desbordar */
+        text-align: center;
+        line-height: 1.5;
+    }
+    .showreel-video-container {
+        width: 100%;
+    }
+
+    /* === 2.5. SECCIÓN GALERÍA DE CONTENIDO === */
+    .content-header .header-title {
+        font-size: 28px;
+    }
+    .content-intro-block .intro-text {
+        font-size: 16px;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 columna en celular */
+        gap: 15px;
+    }
+    .gallery-item {
+        height: 250px;
+    }
+    
+    /* === 2.6. PROCESO CARRUSEL - CORREGIDO === */
+    .process-header .header-title {
+        font-size: 2rem;
+    }
+    .process-intro-text {
+        font-size: 0.9rem;
+    }
+    .slide-content-text .slide-title {
+        /* Ajuste crucial para que el título quepa bien en móvil */
+        font-size: 2.2rem; 
+        margin-bottom: 20px;
+    }
+    .slide-content-text .slide-description {
+        font-size: 1rem;
+    }
+    .step-number-large {
+        font-size: 7rem;
+    }
+
+    /* === 2.7. CARRUSEL DE MARCAS === */
+    .brand-section-title {
+        font-size: 1.8rem;
+    }
+    .brand-slide-item {
+        flex: 0 0 calc(100% / 3); 
+    }
+    .brand-slider-container {
+        mask-image: linear-gradient(to right, 
+            transparent 0%, 
+            black 20%, 
+            black 80%, 
+            transparent 100%);
+    }
+    
+    /* === 2.8. SECCIÓN DE CONTACTO - CORREGIDO === */
+    .contact-form-container {
+        /* Reducimos el padding máximo en celular */
+        padding: 30px 15px; 
+    }
+    .contact-title {
+        font-size: 1.8rem;
+    }
+    .contact-subtitle {
+        font-size: 0.9rem;
+    }
+    .contact-image-container {
+        min-height: 250px; 
+        padding: 15px; 
+    }
+    /* Ajustamos el overlay al nuevo padding */
+    .contact-image-container .image-overlay {
+        top: 15px; 
+        bottom: 15px; 
+        left: 15px; 
+        right: 15px; 
+    }
+
+    /* === 2.9. TOAST DE NOTIFICACIÓN === */
+    .toast-notification {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        min-width: auto;
+    }
 }
