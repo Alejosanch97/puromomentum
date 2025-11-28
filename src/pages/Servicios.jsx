@@ -5,9 +5,10 @@ import { HashLink } from "react-router-hash-link";
 
 // Importamos los estilos y el video para mantener la coherencia
 import "../Styles/servicios.css"; 
-import moveMp4 from "../assets/img/move2.mp4"; 
 
 // --- DATOS DE LA SECCIÓN 2: SISTEMA DE PROPÓSITO AL IMPACTO (Imagen 3) ---
+const moveMp4 =
+  "https://res.cloudinary.com/duqi8oy4a/video/upload/v1764345234/move2_zas4a3.mp4";
 const systemSteps = [
     {
         id: 1,
@@ -71,7 +72,14 @@ export const Servicios = () => {
             <section className="services-main-hero-section theme-dark">
                 {/* Video de Fondo (Fijo, no carrusel) */}
                 <div className="services-media-wrapper">
-                    <video className="services-background-video" autoPlay loop muted playsInline>
+                    <video
+                        className="services-background-video"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                    >
                         <source src={moveMp4} type="video/mp4" />
                     </video>
                     {/* Overlay más oscuro para el contraste del texto */}

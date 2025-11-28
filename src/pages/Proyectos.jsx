@@ -1,13 +1,14 @@
 import React from "react";
 // Importamos los estilos de proyectos (necesitarás crear este archivo: proyectos.css)
 import "../Styles/proyectos.css"; 
-import moveMp4 from "../assets/img/move3.mp4"; // Reutilizamos el video de fondo
 import yout from "../assets/img/yout.mp4"; 
 import yout1 from "../assets/img/yout1.mp4"; 
 import yout2 from "../assets/img/yout2.mp4"; 
 import yout3 from "../assets/img/yout3.mp4"; 
 import yout4 from "../assets/img/yout4.mp4"; 
 // --- DATOS DE LOS PROYECTOS (SECCIÓN 2) ---
+const moveMp4 =
+  "https://res.cloudinary.com/duqi8oy4a/video/upload/v1764345570/move3_ydfksw.mp4";
 const projectsData = [
     {
         id: 1,
@@ -60,7 +61,14 @@ export const Proyectos = () => {
             <section className="projects-main-hero-section theme-dark">
                 {/* Video de Fondo (Fijo) */}
                 <div className="projects-media-wrapper">
-                    <video className="projects-background-video" autoPlay loop muted playsInline>
+                    <video
+                        className="projects-background-video"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                    >
                         <source src={moveMp4} type="video/mp4" />
                     </video>
                     {/* Overlay */}

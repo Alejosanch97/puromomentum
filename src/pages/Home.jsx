@@ -3,11 +3,13 @@ import emailjs from '@emailjs/browser';
 import { NavLink, Link } from 'react-router-dom'; 
 import { HashLink } from "react-router-hash-link";
 import "../Styles/home.css"; 
-import moveMp4 from "../assets/img/move.mp4"; 
 import placeholderImage from "../assets/img/move2.jpg"; 
 
 // --- Configuración de la Nueva Sección ---
 // ... (Tus datos: serviceCards, contentGallery, processSteps, brandLogos) ...
+const moveMp4 =
+  "https://res.cloudinary.com/deafueoco/video/upload/v1764344910/move_emwbsk.mp4";
+
 const serviceCards = [
     {
         id: 1,
@@ -246,8 +248,16 @@ export const Home = () => {
             subtitle: "Producción audiovisual estratégica para marcas con propósito",
             buttonText: "Nuestro Trabajo", 
             media: (
-                <video className="background-video" autoPlay loop muted playsInline>
+                <video
+                    className="background-video"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                >
                     <source src={moveMp4} type="video/mp4" />
+                    
                 </video>
             ),
             overlayColor: "rgba(0, 0, 0, 0.4)", 
