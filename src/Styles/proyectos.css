@@ -83,7 +83,7 @@
 }
 
 .projects-hero-title .projects-line-1 {
-    font-weight: 500; /* Menos peso visual para la primera línea */
+    font-weight: 900; /* Menos peso visual para la primera línea */
     display: block;
     letter-spacing: 5px; /* Espaciado sutil para un look premium */
     font-size: 0.8em; /* Un poco más pequeña que la línea 2 */
@@ -169,6 +169,7 @@
     font-size: clamp(3rem, 8vw, 5rem); 
     font-weight: 900;
     font-family: 'Nunito Sans', sans-serif; /* 🔑 APLICADO */
+    font-stretch: expanded;
     text-align: center;
     margin-bottom: 20px;
     letter-spacing: -1px;
@@ -177,7 +178,6 @@
 
 .projects-section-subtitle {
     font-size: 1.15rem;
-    font-weight: 400; /* 🔑 APLICADO */
     font-family: 'Nunito Sans', sans-serif; /* 🔑 APLICADO */
     font-stretch: expanded; /* 🔑 APLICADO */
     line-height: 1.6;
