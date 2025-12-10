@@ -477,7 +477,7 @@
 }
 
 .services-cta-button:hover {
-    background-color: #E; /* Tono ligeramente más oscuro al pasar el ratón */
+    background-color: #fb2b01; /* Tono ligeramente más oscuro al pasar el ratón */
     transform: translateY(-2px);
 }
 
@@ -730,6 +730,7 @@
     .services-cta-description {
         font-size: 1.0rem;
         margin-bottom: 30px;
+        text-align: justify;
     }
 
     .services-cta-button {

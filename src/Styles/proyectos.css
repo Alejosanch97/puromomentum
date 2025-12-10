@@ -510,6 +510,7 @@
     .projects-hero-subtitle {
         font-size: 1.2rem;
         margin-top: 20px;
+        text-align: justify;
     }
     
     /* === 2.2. SECCIÓN LISTA DE PROYECTOS - CORRECCIÓN DE SUPERPOSICIÓN === */
@@ -581,6 +582,7 @@
 
     .projects-recap-description {
         font-size: 0.95rem;
+        text-align: justify;
     }
     
     .projects-recap-video-container {
