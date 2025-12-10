@@ -90,14 +90,14 @@
 
 /* ESTADO ACTIVO (Clase aplicada por NavLink/HashLink) */
 .active-link {
-    color: #d8456a !important; /* Forzamos el color activo */
+    color: #cf4024 !important; /* Forzamos el color activo */
     font-weight: bold; 
-    border-bottom: 2px solid #d8456a;
+    border-bottom: 2px solid #cf4024;
 }
 
 /* ESTADO HOVER (Al pasar el ratón) */
 .navbar-links .nav-item:hover {
-    color: #d8456a !important; /* Forzar color hover */
+    color: #cf4024 !important; /* Forzar color hover */
     text-decoration: none !important; /* Asegurar que no aparezca subrayado azul/default */
     cursor: pointer;
 }
@@ -110,7 +110,7 @@
 }
 
 .nav-button {
-    background-color: #d8456a; 
+    background-color: #cf4024; 
     color: #ffffff;
     border: none;
     height: 50px; 
@@ -127,7 +127,7 @@
 }
 
 .nav-button:hover {
-    background-color: #c7385a; 
+    background-color: #cf4024; 
 }
 
 /* 6. Toggle de Modo Oscuro (Icono) */
@@ -246,11 +246,11 @@
     
     /* Estilo del link activo en móvil */
     .active-link {
-        color: #d8456a !important; 
+        color: #cf4024 !important; 
         font-weight: bold; 
         /* Usamos un color de fondo sutil en lugar de border-bottom */
         background-color: rgba(216, 69, 106, 0.1); 
-        border-bottom: 1px solid #d8456a; /* Mantenemos el borde para diferenciar */
+        border-bottom: 1px solid #cf4024; /* Mantenemos el borde para diferenciar */
     }
 
     /* 6. Botón de Contacto (Móvil) - Mostrar */

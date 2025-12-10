@@ -10,31 +10,36 @@ import placeholderImage from "../assets/img/move2.jpg";
 const moveMp4 =
   "https://res.cloudinary.com/deafueoco/video/upload/v1764344910/move_emwbsk.mp4";
 
+
+import icono1 from "../assets/img/icon1.png";
+import icono2 from "../assets/img/icon2.png";
+import icono3 from "../assets/img/icon3.png";
+
 const serviceCards = [
     {
         id: 1,
         title: "Estrategia",
         subtitle: "Diseñamos desde el propósito",
-        icon: "🎯", 
+        icon: icono1, 
         colorClass: "card-strategy" 
     },
     {
         id: 2,
         title: "Dirección Cinematográfica",
         subtitle: "Narramos con intención, estética y ritmo",
-        icon: "🎬", 
+        icon: icono2, 
         colorClass: "card-cinematography" 
     },
     {
         id: 3,
         title: "Eficiencia Operativa",
         subtitle: "Ejecutamos con precisión y agilidad",
-        icon: "⚙️", 
+        icon: icono3, 
         colorClass: "card-efficiency" 
     },
 ];
 
-const placeholderImageUrlGallery = "https://i.pinimg.com/736x/fd/26/c2/fd26c23a82e4cd9eb0456242e69adb7f.jpg";
+const placeholderImageUrlGallery = "https://i.pinimg.com/736x/53/62/52/53625269a64907fdd9d347566eec2d8e.jpg";
 const placeholderImageUrlGallery1 = "https://i.pinimg.com/736x/f5/a3/1c/f5a31c35faa27de13b2dac1a5b7f12cc.jpg";
 const placeholderImageUrlGallery2 = "https://i.pinimg.com/736x/74/0f/d3/740fd33dffa7a5a58b2019f4990c50d3.jpg";
 const placeholderImageUrlGallery3 = "https://i.pinimg.com/736x/5b/38/19/5b38194b7db04f13ab4bfa2187793768.jpg";
@@ -43,14 +48,14 @@ const placeholderImageUrlGallery5 = "https://i.pinimg.com/736x/e8/bf/70/e8bf7086
 const placeholderImageUrlGallery6 = "https://i.pinimg.com/736x/8a/0f/a7/8a0fa7740624334cfa734d330235a1cc.jpg";
 const placeholderImageUrlGallery7 = "https://i.pinimg.com/736x/80/58/c9/8058c9404a46ab128c5fead5ebd4934c.jpg";
 const contentGallery = [
-    { id: 1, imageUrl: placeholderImageUrlGallery, title: "Proyecto A" },
-    { id: 2, imageUrl: placeholderImageUrlGallery1, title: "Proyecto B" },
-    { id: 3, imageUrl: placeholderImageUrlGallery2, title: "Proyecto C" },
-    { id: 4, imageUrl: placeholderImageUrlGallery3, title: "Proyecto D" },
-    { id: 5, imageUrl: placeholderImageUrlGallery4, title: "Proyecto E" },
-    { id: 6, imageUrl: placeholderImageUrlGallery5, title: "Proyecto F" },
-    { id: 7, imageUrl: placeholderImageUrlGallery6, title: "Proyecto G" },
-    { id: 8, imageUrl: placeholderImageUrlGallery7, title: "Proyecto H" },
+    { id: 1, imageUrl: placeholderImageUrlGallery, title: "VSL Inversionista Master Institucional" },
+    { id: 2, imageUrl: placeholderImageUrlGallery1, title: "Future Finance Fest Institucional" },
+    { id: 3, imageUrl: placeholderImageUrlGallery2, title: "Maiguai Live Sesion" },
+    { id: 4, imageUrl: placeholderImageUrlGallery3, title: "Health at Home Curso dígital" },
+    { id: 5, imageUrl: placeholderImageUrlGallery4, title: "Clausura Crear 2025 Institucional" },
+    { id: 6, imageUrl: placeholderImageUrlGallery5, title: "Campaña Just Be Present Publicitario" },
+    { id: 7, imageUrl: placeholderImageUrlGallery6, title: "Campaña KFC Publicitario" },
+    { id: 8, imageUrl: placeholderImageUrlGallery7, title: "Campaña Ilé Danza Publicitario" },
 ];
 
 const processSteps = [
@@ -59,28 +64,28 @@ const processSteps = [
         title: "Intención",
         description: "Toda historia parte de una búsqueda. Escuchamos, observamos y entendemos para encontrar el propósito detrás de cada proyecto.",
         class: "intencion",
-        bgUrl: "https://images.pexels.com/photos/2007137/pexels-photo-2007137.jpeg" 
+        bgUrl: "https://i.pinimg.com/736x/a9/58/0d/a9580d2aa9e10043cfa4803d4fadb2cf.jpg" 
     },
     {
         id: 2,
         title: "Narración",
         description: "Traducimos la estrategia en lenguaje audiovisual. Cada encuadre y ritmo reflejan la emoción que queremos transmitir.",
         class: "narracion",
-        bgUrl: "https://images.pexels.com/photos/9291615/pexels-photo-9291615.jpeg"
+        bgUrl: "https://i.pinimg.com/736x/ff/af/38/ffaf38f27e90b02724640e78a24dcb17.jpg"
     },
     {
         id: 3,
         title: "Ejecución",
         description: "Planteamos, rodamos y finalizamos con precisión, fusionando energía creativa y control operativo.",
         class: "ejecucion",
-        bgUrl: "https://images.pexels.com/photos/9049054/pexels-photo-9049054.jpeg"
+        bgUrl: "https://i.pinimg.com/736x/42/cd/b4/42cdb40927b0422415e7608ea04d7715.jpg"
     },
     {
         id: 4,
         title: "Optimización",
         description: "Medimos el impacto y ajustamos con intención. Lo que funciona se escala; lo que no, se reajusta. La historia sigue en movimiento.",
         class: "optimizacion",
-        bgUrl: "https://images.pexels.com/photos/4752708/pexels-photo-4752708.jpeg"
+        bgUrl: "https://i.pinimg.com/736x/6f/90/72/6f9072138e027529410a1dde342a7b88.jpg"
     },
 ];
 
@@ -246,7 +251,7 @@ export const Home = () => {
             title: "We are", 
             highlight: "Puro Momentum", 
             subtitle: "Producción audiovisual estratégica para marcas con propósito",
-            buttonText: "Nuestro Trabajo", 
+            buttonText: "Cómo Trabajamos", 
             media: (
                 <video
                     className="background-video"
@@ -268,8 +273,8 @@ export const Home = () => {
             layout: 'split',
             title: "TU MARCA NECESITA MÁS QUE UNA AGENCIA.",
             highlight: "AGENCIA.",
-            subtitle: "Necesita una idea poderosa. Y quien la ejecute. Creamos estrategias completas que fusionan contenido, paid media y producción audiovisual para resultados con impacto.",
-            buttonText: "Quiero hablar con ustedes", 
+            subtitle: "Necesita una visión clara. Y un equipo que la haga realidad. Fusionamos estrategia, narrativa y producción para crear contenido que conecta y genera resultados.",
+            buttonText: "Conversemos", 
             media: () => (
                 <div 
                     className="split-media-container-img" 
@@ -305,7 +310,7 @@ export const Home = () => {
                     <p className="hero-subtitle">
                         {data.subtitle}
                     </p>
-                    <Link to="/proyectos" className="hero-button">
+                    <Link to="/servicios" className="hero-button">
                         {data.buttonText}
                     </Link>
                 </div>
@@ -367,10 +372,6 @@ export const Home = () => {
                             <i className="fab fa-instagram"></i>
                             <span className="social-dot"></span>instagram
                         </a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                            <i className="fab fa-facebook-f"></i>
-                            <span className="social-dot"></span>facebook
-                        </a>
                     </div>
                     
                     {/* Indicadores */}
@@ -421,7 +422,7 @@ export const Home = () => {
                     <div className="about-image-container">
                         <div className="about-image-placeholder" 
                             style={{ 
-                                backgroundImage: `url('https://i.pinimg.com/1200x/fe/14/26/fe1426567ad0b1c20b6fb440e64aff55.jpg')` 
+                                backgroundImage: `url('https://i.pinimg.com/736x/ba/f5/93/baf5930e8529f4cef9716ffe17cb8409.jpg')` 
                             }}
                         ></div>
                     </div>
@@ -443,15 +444,15 @@ export const Home = () => {
                 <div className="momentum-services-wrapper">
                     <div className="services-header">
                         <h2 className="header-title">
-                            Una alianza creativa que entiende tu marca
+                            Cada proyecto comienza con una sesión de diagnóstico personalizada.
                         </h2>
                     </div>
 
                     <div className="services-intro-block">
-                        <p className="intro-subtitle">Cada proyecto comienza con una sesión de diagnóstico personalizada</p>
+                        <p className="intro-subtitle">Cada proyecto nace de una mirada estratégica que nos permite diseñar piezas alineadas con los objetivos, la identidad y la visión de cada cliente.</p>
 
                         <p className="intro-text">
-                            En <strong className="highlight">PURO MOMENTUM</strong> integramos estrategia, dirección cinematográfica y eficiencia operativa para crear contenido que no solo se ve bien, sino que <strong className="highlight">FUNCIONA</strong>.
+                            Porque cuando una marca comunica con claridad, crece con intención. Crece con: <strong className="highlight">PURO MOMENTUM</strong>.
                             <br /><br />
                             Antes de producir, "<span className="intro-process-step">escuchamos</span>, <span className="intro-process-step">comprendemos</span> y <span className="intro-process-step">analizamos</span>."
                         </p>
@@ -461,7 +462,14 @@ export const Home = () => {
                     <div className="services-cards-grid">
                         {serviceCards.map((card) => (
                             <div key={card.id} className={`service-card-item ${card.colorClass}`}>
-                                <div className="card-icon-container">{card.icon}</div>
+                                <div className="card-icon-container">
+                                    {/* 🔑 CLAVE: Usar <img> para renderizar la URL */}
+                                    <img
+                                        src={card.icon}
+                                        alt={card.title}
+                                        className="card-icon-img" // Usaremos esta clase para el CSS
+                                    />
+                                </div>
                                 <h3 className="card-title">{card.title}</h3>
                                 <p className="card-subtitle">{card.subtitle}</p>
                                 <p className="card-description">{card.description}</p>
@@ -539,82 +547,68 @@ export const Home = () => {
                 </div>
             </section>
             
-            {/* --- SECCIÓN: PROCESO (CARRUSEL) --- */}
-            <section className="process-carousel-section">
+            {/* --- SECCIÓN: PROCESO (LISTA ESTÁTICA) --- */}
+            <section className="process-static-section">
                 <div className="process-header">
                     <h2 className="header-title">
-                        Proceso de <span className="highlight">4 pasos</span> para resultados
+                        Nuestro sistema de <span className="highlight">4 fases</span>
                     </h2>
                 </div>
 
-                <div className="process-slider-container">
-                    
-                    <div className="process-indicators">
-                        {processSteps.map((step, index) => (
-                            <div 
-                                key={step.id} 
-                                className={`process-indicator-item ${currentProcessStep === index ? "active-step" : ""}`}
-                                onClick={() => goToProcessStep(index)}
-                            >
-                                <span className="indicator-number">
+                <div className="process-list-container">
+                    {processSteps.map((step, index) => (
+                        <div
+                            key={step.id}
+                            className={`process-item-card ${step.class}`}
+                        >
+                            {/* Lado izquierdo: Texto */}
+                            <div className="card-text-content">
+                                <span className="step-number-small">
                                     {String(index + 1).padStart(2, '0')}
                                 </span>
-                                <span className="indicator-title">{step.title}</span>
+                                <h3 className="card-title">{step.title}</h3>
+                                <p className="card-description">{step.description}</p>
                             </div>
-                        ))}
-                    </div>
 
-                    <div 
-                        className="process-slider-track" 
-                        style={{ transform: `translateX(-${currentProcessStep * 100}%)` }}
-                    >
-                        {processSteps.map((step, index) => (
-                            <div 
-                                key={step.id} 
-                                className={`process-slide-item ${step.class}`}
-                            >
-                                <div className="slide-background" style={{ backgroundImage: `url(${step.bgUrl})` }}>
-                                    <div className="background-overlay"></div>
-                                </div>
-                                
-                                <div className="slide-content-text">
-                                    <h3 className="slide-title">{step.title}</h3>
-                                    <p className="slide-description">{step.description}</p>
-                                </div>
+                            {/* Lado derecho: Imagen de Fondo */}
+                            <div className="card-image-background" style={{ backgroundImage: `url(${step.bgUrl})` }}>
+                                {/* Opcional: Overlay sutil para el efecto */}
+                                <div className="background-overlay"></div>
                             </div>
-                        ))}
-                    </div>
-
+                        </div>
+                    ))}
                 </div>
             </section>
             
-            {/* --- SECCIÓN: CARRUSEL DE MARCAS --- */}
-            <section className="brand-carousel-section">
-                <div className="brand-carousel-wrapper">
-                    <h2 className="brand-section-title">Nuestras <span className="highlight">alianzas</span></h2>
-                    <div className="brand-slider-container">
-                        <div
-                            className="brand-slider-track"
-                            style={{ transform: `translateX(-${currentBrandSlide * (100 / brandsPerView)}%)` }}
-                        >
-                            {brandLogos.concat(brandLogos).map((brand, index) => ( 
-                                <div key={index} className="brand-slide-item">
-                                    <img src={brand.src} alt={brand.alt} className="brand-logo" />
-                                </div>
-                            ))}
+            {/*
+    --- SECCIÓN: CARRUSEL DE MARCAS ---
+    <section className="brand-carousel-section">
+        <div className="brand-carousel-wrapper">
+            <h2 className="brand-section-title">Nuestras <span className="highlight">alianzas</span></h2>
+            <div className="brand-slider-container">
+                <div
+                    className="brand-slider-track"
+                    style={{ transform: `translateX(-${currentBrandSlide * (100 / brandsPerView)}%)` }}
+                >
+                    {brandLogos.concat(brandLogos).map((brand, index) => ( 
+                        <div key={index} className="brand-slide-item">
+                            <img src={brand.src} alt={brand.alt} className="brand-logo" />
                         </div>
-                    </div>
-                    <div className="brand-navigation-dots">
-                        {Array.from({ length: totalBrandSlides }).map((_, index) => (
-                            <span
-                                key={index}
-                                className={`brand-dot ${currentBrandSlide === index ? 'active' : ''}`}
-                                onClick={() => goToBrandSlide(index)}
-                            ></span>
-                        ))}
-                    </div>
+                    ))}
                 </div>
-            </section>
+            </div>
+            <div className="brand-navigation-dots">
+                {Array.from({ length: totalBrandSlides }).map((_, index) => (
+                    <span
+                        key={index}
+                        className={`brand-dot ${currentBrandSlide === index ? 'active' : ''}`}
+                        onClick={() => goToBrandSlide(index)}
+                    ></span>
+                ))}
+            </div>
+        </div>
+    </section>
+*/}
             
             {/* --- SECCIÓN: FORMULARIO DE CONTACTO (CORREGIDA) --- */}
             <section className="contact-section" id="contacto">
@@ -661,7 +655,7 @@ export const Home = () => {
 
                             {/* Campo ¿Cuál es tu necesidad? (Área de texto) */}
                             <div className="form-group">
-                                <label htmlFor="necesidad">¿Cuál es tu necesidad?</label>
+                                <label htmlFor="necesidad">Deja tu mensaje</label>
                                 <textarea
                                     id="necesidad"
                                     name="necesidad" 

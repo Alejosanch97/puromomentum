@@ -29,9 +29,9 @@ const projectsData = [
     },
     {
         id: 3,
-        title: "KFC Wings (Alitas)",
-        subtitle: "Comercial · Alimentos · Lifestyle",
-        description: "Una pieza creada para evocar la experiencia única de las alitas de KFC. La dirección se centró en un lenguaje dinámico y apetitoso, combinando tomas de alta velocidad y primeros planos que resaltan la textura y el sabor, generando una conexión inmediata con la audiencia.",
+        title: "KFC Colombia",
+        subtitle: "Comercial · Lifestyle · Comida",
+        description: "Creamos una pieza de ritmo ágil y lenguaje visual fresco para conectar con públicos jóvenes sin perder la esencia de marca. Cada plano comunica cercanía, dinamismo y sabor; una campaña que llevó el lifestyle de KFC a las redes con autenticidad y movimiento.",
         url: yout2, 
         layout: "default",
     },
@@ -78,13 +78,14 @@ export const Proyectos = () => {
                 {/* Contenido Centrado */}
                 <div className="projects-hero-content-wrapper projects-centered-content">
                     <h1 className="projects-hero-title projects-multi-line">
-                        <span className="projects-line-1">PORTAFOLIO</span>
-                        <span className="projects-line-2 projects-highlight">DE RESULTADOS.</span>
+                        <span className="projects-line-1">NUESTRO PORTAFOLIO</span>
+                        <span className="projects-line-2 projects-highlight">EN ACCIÓN.</span>
                     </h1>
                     <p className="projects-hero-subtitle">
-                        Mira el <strong className="projects-brand-highlight">momentum</strong> en acción a través de nuestros proyectos más recientes.
+                        En <strong className="projects-brand-highlight">PURO MOMENTUM</strong> exploramos la forma en que la intención se convierte en imagen, y la emoción encuentra su lenguaje.
                     </p>
                 </div>
+                
             </section>
             
             {/* --- SECCIÓN 2: LISTA DE PROYECTOS --- */}
@@ -94,7 +95,7 @@ export const Proyectos = () => {
                         Proyectos
                     </h2>
                     <p className="projects-section-subtitle">
-                        En Momentum, creamos contenido que educa, entretiene e inspira, forjando conexiones profundas y generando conversiones. Nuestro equipo de producción ofrece soluciones a medida para contenido promocional, social, corporativo o de eventos, asegurando que cada historia resuene con máximo impacto y logre los objetivos de tu marca.
+                        En PURO MOMENTUM, creamos contenido que educa, entretiene e inspira, forjando conexiones profundas y generando conversiones. Nuestro equipo de producción ofrece soluciones a medida para contenido promocional, social, corporativo o de eventos, asegurando que cada historia resuene con máximo impacto y logre los objetivos de tu marca.
                     </p>
 
                     {/* Contenedor del Grid/Lista de Proyectos */}

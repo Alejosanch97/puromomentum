@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600;700&family=Nunito+Sans:wght@400;700;900&display=swap');
+
 /* Colores */
 :root {
     --primary-background: #1a1a1a;
     --secondary-background: #ffffff;
     --text-color-dark: #ffffff;
     --text-color-light: #ffffff; /* Ajustado para que Slide 2 tenga texto blanco */
-    --accent-color: #ff4a68;
-    --social-dot-color: #ff4a68;
+    --accent-color: #cf4024;
+    --social-dot-color: #cf4024;
 }
 
 body {
@@ -122,6 +124,7 @@ body {
 .hero-title {
     font-size: 6vw;
     font-weight: 900;
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 FUENTE DE TÍTULOS */
     text-transform: uppercase;
     line-height: 1.1;
     margin-bottom: 20px;
@@ -148,7 +151,9 @@ body {
 
 .hero-subtitle {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400; /* 🔑 Peso Regular */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 FUENTE DE SUBTÍTULOS */
+    font-stretch: expanded; /* 🔑 Estilo Expanded */
     max-width: 650px;
     margin: 0 auto 40px auto;
     /* Color predeterminado para Slide 1 */
@@ -167,8 +172,9 @@ body {
     cursor: pointer;
     transition: background 0.3s;
     border-radius: 4px;
+    text-decoration: none;
 }
-.hero-button:hover { background-color: #e53956; }
+.hero-button:hover { background-color: #bb3319; }
 
 /* === Slide 2 Específico (Split - theme-light) === */
 .hero-content.split-content {
@@ -353,9 +359,12 @@ body {
 
 .about-title {
     font-size: 56px;
-    font-weight: 800;
+    font-weight: 900; /* 🔑 Usamos 900 para Nunito Sans Black */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 Aplicamos Nunito Sans */
     margin-bottom: 20px;
     line-height: 1.1;
+    /* Adicional: forzamos mayúsculas como en la imagen de ejemplo */
+    text-transform: uppercase;
 }
 
 .about-title .highlight {
@@ -367,7 +376,11 @@ body {
     line-height: 1.7;
     margin-bottom: 40px;
     color: rgba(0, 0, 0, 0.85); 
-    font-weight: 400;
+    
+    font-weight: 400; /* 🔑 Peso Regular */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 Aplicamos Nunito Sans */
+    font-stretch: expanded; /* 🔑 Estilo Expanded */
+    
     text-align: justify; 
 }
 
@@ -379,7 +392,8 @@ body {
 
 /* CLASE EXISTENTE: Para palabras con subrayado */
 .underlined-keyword {
-    font-weight: 600;
+    font-weight: 600; /* Mantenemos un peso semibold para destacar */
+    font-family: 'Nunito Sans', sans-serif; /* Aplicamos Nunito Sans */
     border-bottom: 3px solid var(--accent-color);
     display: inline-block;
     padding-bottom: 2px;
@@ -389,14 +403,10 @@ body {
 /* CLASE NUEVA: Para el efecto de círculo (se aplica a 'estrategia') */
 .circled-keyword {
     position: relative;
-    font-weight: 600;
+    font-weight: 600; /* Mantenemos un peso semibold para destacar */
+    font-family: 'Nunito Sans', sans-serif; /* Aplicamos Nunito Sans */
     display: inline-block;
-    /* Ajustamos el padding para el círculo. Eliminado el padding-bottom adicional del subrayado. */
     padding: 2px 7px; 
-    
-    /* CAMBIO: Eliminadas las propiedades de border-bottom (subrayado) */
-    
-    /* Ajustamos el z-index para que el texto esté por encima del círculo */
     z-index: 1; 
 }
 
@@ -420,7 +430,8 @@ body {
 
 /* Estilo para las palabras que son solo negritas, como "Puro Momentum" */
 .about-text strong {
-    font-weight: 700;
+    font-weight: 700; /* 🔑 Usamos un peso alto para Nunito Sans */
+    font-family: 'Nunito Sans', sans-serif;
     color: #000000;
 }
 
@@ -449,6 +460,7 @@ body {
     color: white;
     padding: 100px 0;
     font-family: 'Inter', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .momentum-services-wrapper {
@@ -480,12 +492,13 @@ body {
 }
 
 .header-title {
-    font-size: 4rem; /* Hacemos el tamaño más responsivo y grande */
-    font-weight: 900;
+    font-size: 4rem; 
+    font-weight: 900; /* 🔑 Nunito Sans Black */
     line-height: 1.1;
     margin-bottom: 15px;
     text-transform: uppercase;
     text-align: left;
+    font-family: 'Nunito Sans', sans-serif; 
 }
 
 .header-subtitle {
@@ -527,6 +540,8 @@ body {
     max-width: 100%; 
     margin: 0; 
     font-weight: 400; 
+    font-family: 'Nunito Sans', sans-serif;
+    font-stretch: expanded;
     color: rgba(255, 255, 255, 0.9);
     letter-spacing: 0.5px; 
 }
@@ -578,21 +593,34 @@ body {
 }
 
 .card-icon-container {
-    font-size: 3.5rem; 
+    /* Eliminamos font-size, ya que no aplica a una imagen */
     margin-bottom: 20px;
     line-height: 1; 
+    /* 🔑 CLAVE: Aseguramos que la imagen se alinee al centro */
+    display: flex;
+    justify-content: center;
+}
+
+.card-icon-container img {
+    /* Define el tamaño fijo del icono (ej. 60x60px), similar al que ocupaba el icono de fuente */
+    width: 60px; 
+    height: 60px;
+    object-fit: contain; /* Asegura que la imagen se ajuste sin cortarse ni deformarse */
 }
 
 .card-title {
     font-size: 28px;
-    font-weight: 900;
+    font-weight: 900; /* 🔑 Nunito Sans Black */
+    font-family: 'Nunito Sans', sans-serif;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
 .card-subtitle {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400; /* 🔑 Nunito Sans Regular */
+    font-family: 'Nunito Sans', sans-serif;
+    font-stretch: expanded; /* 🔑 Nunito Sans Expanded */
     margin-bottom: 20px;
     color: rgba(255, 255, 255, 0.8); 
 }
@@ -608,44 +636,44 @@ body {
 /* Paleta de Colores para Tarjetas (Ajuste basado en la Imagen 1, más oscuros para el fondo oscuro) */
 /* Estrategia (Similar al amarillo/dorado) */
 .card-strategy {
-    background-color: #ffc107; /* Amarillo oscuro */
-    color: black;
+    background-color: #cf4024; /* Amarillo oscuro */
+    color: white;
 }
 .card-strategy .card-subtitle, 
 .card-strategy .card-description,
 .card-strategy .card-icon-container {
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 .card-strategy .card-title {
-    color: black;
+    color: white;
 }
 
 /* Dirección Cinematográfica (Similar al rojo) */
 .card-cinematography {
-    background-color: #dc3545; /* Rojo de acento */
-    color: white;
+    background-color: #dddbd6; /* Rojo de acento */
+    color: black;
 }
 .card-cinematography .card-subtitle, 
 .card-cinematography .card-description,
 .card-cinematography .card-icon-container {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.7);
 }
 .card-cinematography .card-title {
-    color: white;
+    color: black;
 }
 
 /* Eficiencia Operativa (Similar al blanco/gris en fondo oscuro) */
 .card-efficiency {
-    background-color: #343a40; /* Gris oscuro */
-    color: white;
+    background-color: #a7a5a0; /* Gris oscuro */
+    color: black;
 }
 .card-efficiency .card-subtitle, 
 .card-efficiency .card-description,
 .card-efficiency .card-icon-container {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.7);
 }
 .card-efficiency .card-title {
-    color: white;
+    color: black;
 }
 
 /* ------------------------------------------- */
@@ -696,14 +724,14 @@ body {
 /* TÍTULO: Centrado y Animado */
 .showreel-title {
     font-size: 5.5rem;
-    font-weight: 900;
+    font-weight: 900; /* 🔑 Usamos el peso Black (900) */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 Aplicamos Nunito Sans */
     line-height: 0.9;
-    margin: 0 auto 25px auto; /* Centra el elemento h2 y añade margen inferior */
+    margin: 0 auto 25px auto; 
     text-transform: uppercase;
     letter-spacing: -3px; 
-    
     /* APLICAMOS ANIMACIÓN DE TÍTULO */
-    animation: fadeInSlideUp 1s ease-out; /* Título aparece con movimiento */
+    animation: fadeInSlideUp 1s ease-out; 
 }
 
 /* Wrapper principal para las 2 columnas (Subtítulo y Video) */
@@ -727,12 +755,13 @@ body {
 
 /* CUERPO DEL TEXTO: Alineación justificada y letra más grande */
 .showreel-text {
-    /* Aumentamos el tamaño de la fuente para que sea más grande */
     font-size: 1.75rem; 
     font-weight: 500; 
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 Aplicamos Nunito Sans */
+    font-stretch: expanded; /* 🔑 Aplicamos el estilo Expanded */
     line-height: 1.6; 
     margin-bottom: 40px;
-    text-align: justify; /* JUSTIFICAMOS TODO EL TEXTO */
+    text-align: justify; 
     max-width: 100%;
     
     text-shadow: none;
@@ -742,7 +771,7 @@ body {
 .showreel-text .highlight,
 .showreel-text .underlined-keyword {
     font-weight: 900; 
-    background-color: rgba(220, 53, 69, 0.2); 
+    background-color: #dddbd6; 
     padding: 2px 4px;
     border-radius: 4px;
     text-decoration: none; 
@@ -754,7 +783,7 @@ body {
 
 /* Estilo del Botón */
 .showreel-button {
-    background-color: #dc3545; 
+    background-color: #cf4024; 
     color: white;
     border: none;
     padding: 18px 40px; 
@@ -764,35 +793,38 @@ body {
     transition: all 0.3s;
     border-radius: 8px;
     align-self: flex-start; /* Alinea el botón a la izquierda */
-    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.4); 
+    box-shadow: 0 4px 10px #cf4024; 
+    text-decoration: none; 
 }
 
 .showreel-button:hover {
-    background-color: #a72835; 
-    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.6); 
+    background-color: #cf4024; 
+    box-shadow: 0 8px 20px #cf4024; 
     transform: translateY(-3px); 
 }
 
 /* Contenedor del Video (Derecha - Columna 2) */
 .showreel-video-container {
-    flex: 1.2; /* Mantenemos la proporción del video */
+    flex: 1.2;
     width: auto;
     position: relative;
-    padding-bottom: 50%; 
+    padding-bottom: 50%;
     height: 0;
-    overflow: hidden;
     
-    /* Quitamos el contenedor: Eliminamos bordes y sombras */
-    border-radius: 29%;
-    box-shadow: none; 
+    /* 🔑 CLAVE: Forzamos la curvatura en el contenedor más externo */
+    /* Usamos clip-path para un borde suave y funcional */
+    clip-path: inset(0 round 90px); 
+    /* 🔑 Alternativa más compatible con algunos navegadores (Descomentar si clip-path falla) */
+    /* -webkit-mask-image: -webkit-radial-gradient(white, black); */
     
-    background-color: transparent; 
+    /* Eliminamos border-radius aquí para evitar conflictos */
+    /* border-radius: 90px; <--- ELIMINAR O COMENTAR */
     
-    /* APLICAMOS ANIMACIÓN DE VIDEO */
-    animation: fadeIn 1.5s ease-out 0.5s forwards; /* El video aparece 0.5s después del título */
-    opacity: 0; /* Inicia transparente para la animación */
-    
-    transition: none;
+    overflow: hidden; 
+    background-color: transparent;
+
+    animation: fadeIn 1.5s ease-out 0.5s forwards;
+    opacity: 0;
     margin: 0;
 }
 
@@ -809,6 +841,10 @@ body {
     width: 100%;
     height: 100%;
     border: 0;
+
+    /* 🔑 CLAVE: Asegurarse de que el Iframe sea cuadrado y ocupe todo el espacio. */
+    /* Dejamos border-radius, ya que es la forma más limpia, y clip-path está en el padre. */
+    border-radius: 90px; 
 }
 
 /* ==================================================== */
@@ -845,9 +881,11 @@ body {
 .content-header .header-title {
     /* Aseguramos que el texto esté centrado */
     text-align: center; 
-    /* El resto de estilos se mantienen */
+    
     font-size: 65px;
-    font-weight: 800;
+    font-weight: 900; /* 🔑 Nunito Sans Black */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 Aplicamos Nunito Sans */
+    
     line-height: 1.1;
     text-transform: uppercase;
     color: #ffffff;
@@ -871,7 +909,10 @@ body {
     font-size: 22px; 
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.85); 
-    font-weight: 400;
+    
+    font-weight: 400; /* 🔑 Nunito Sans Regular */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 Aplicamos Nunito Sans */
+    font-stretch: expanded; /* 🔑 Estilo Expanded */
 }
 
 /* Estilo para los resaltes dentro del subtítulo (asumiendo que usan .intro-process-step) */
@@ -1016,227 +1057,195 @@ body {
 }
 
 /* ==================================================== */
-/* 8. PROCESO CARRUSEL (4 PASOS) - NUEVA SECCIÓN */
+/* 8. PROCESO LISTA ESTÁTICA (4 PASOS) - ZIG-ZAG CORREGIDO */
 /* ==================================================== */
 
-.process-carousel-section {
+.process-static-section {
     position: relative;
-    /* Usamos el alto de la ventana visible para crear un slider de pantalla completa */
-    height: 100vh; 
     width: 100%;
-    overflow: hidden; /* Oculta los slides que están fuera */
+    padding: 80px 0; 
+    overflow: hidden; 
+    /* El fondo de la sección se mantiene negro */
     background-color: #000;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* ------------------------------------------- */
-/* 8.1. HEADER FIJO (TÍTULO Y TEXTO INTRODUCTORIO) */
+/* 8.1. HEADER FIJO (TÍTULO) */
 /* ------------------------------------------- */
 
 .process-header {
-    position: relative;
-    z-index: 20; /* Asegura que esté sobre el carrusel */
     max-width: 1400px;
-    margin: 0 auto;
     width: 100%;
-    padding: 60px 40px 0 40px; /* Padding superior, y lateral */
+    padding: 0 40px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .process-header .header-title {
-    font-size: 4.5rem;
-    font-weight: 900;
+    font-size: 4rem;
+    font-weight: 900; 
+    font-family: 'Nunito Sans', sans-serif; 
     line-height: 1.1;
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 10px;
     text-align: center;
-    
-}
-
-.process-intro-text {
-    font-size: 1.1rem;
-    font-weight: 300;
-    max-width: 700px;
-    margin-bottom: 40px;
-    color: rgba(255, 255, 255, 0.85);
 }
 
 /* ------------------------------------------- */
-/* 8.2. CARRUSEL CONTENEDOR Y TRACK */
+/* 8.2. CONTENEDOR DE LA LISTA Y CARDS */
 /* ------------------------------------------- */
 
-.process-slider-container {
-    flex-grow: 1; /* Ocupa el espacio restante */
-    position: relative;
+.process-list-container {
+    max-width: 1400px;
     width: 100%;
-    overflow: hidden;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
 }
 
-.process-slider-track {
+.process-item-card {
     display: flex;
+    min-height: 300px; 
     width: 100%;
-    height: 100%;
-    /* Transición suave para el cambio de paso */
-    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* 🔑 CAMBIO 1: Color de fondo de la tarjeta a gris claro */
+    background-color: #dddbd6; 
+    border-radius: 10px; 
+    overflow: hidden;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; 
 }
 
-.process-slide-item {
-    min-width: 100%; /* Cada slide ocupa el 100% del ancho */
-    height: 100%;
-    position: relative;
-    overflow: hidden;
+.process-item-card:hover {
+    transform: translateY(-5px);
+    /* Sombra con color de acento sobre fondo claro */
+    box-shadow: 0 15px 30px rgba(255, 69, 0, 0.25); 
+}
+
+/* ------------------------------------------- */
+/* 8.3. LÓGICA DE INTERCALADO (ZIG-ZAG) */
+/* ------------------------------------------- */
+
+/* Para las tarjetas impares (2, 4, etc. - usando :nth-child(odd) si empieza en 1, 
+   o :nth-child(2n) si es la segunda, cuarta, etc. En este caso, queremos la 2da y 4ta) 
+   Usamos :nth-child(2n) para la segunda, cuarta, etc. */
+.process-item-card:nth-child(2n) {
+    /* 🔑 CAMBIO 2: Invertir el orden para Texto/Imagen -> Imagen/Texto */
+    flex-direction: row-reverse; 
+}
+
+/* ------------------------------------------- */
+/* 8.4. CONTENIDO DE TEXTO (IZQUIERDA/DERECHA) */
+/* ------------------------------------------- */
+
+.card-text-content {
+    flex: 1 1 50%;
+    padding: 40px 50px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    /* 🔑 CAMBIO 3: Color de texto oscuro para contraste con el fondo claro */
+    color: #1a1a1a; 
+}
+
+.step-number-small {
+    font-size: 1.5rem;
+    font-weight: 900; 
+    font-family: 'Nunito Sans', sans-serif;
+    /* 🔑 CAMBIO 4: Mantenemos el acento para que resalte */
+    color: var(--accent-color); 
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 2.5rem;
+    font-weight: 900; 
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    /* 🔑 CAMBIO 5: Color de título muy oscuro */
+    color: #000;
+}
+
+.card-description {
+    font-size: 1.1rem;
+    font-weight: 400; 
+    font-family: 'Nunito Sans', sans-serif; 
+    line-height: 1.6;
+    /* 🔑 CAMBIO 6: Color de descripción oscuro */
+    color: #333;
 }
 
 /* ------------------------------------------- */
-/* 8.3. FONDO DE IMAGEN Y OVERLAY (Efecto de movimiento) */
+/* 8.5. IMAGEN DE FONDO (DERECHA/IZQUIERDA) */
 /* ------------------------------------------- */
 
-.process-slide-item .slide-background {
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%; /* Más grande que el contenedor para permitir el efecto Parallax/Zoom */
-    height: 110%;
+.card-image-background {
+    flex: 1 1 50%;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    /* La clave para el efecto visual: la transición en el fondo */
-    transition: all 12s ease-in-out; 
-    transform: scale(1);
-    z-index: 1;
+    position: relative;
+    transition: transform 0.6s ease-out;
 }
 
-/* Aplicar la animación de zoom sutil al fondo del slide activo */
-.process-slider-track .process-slide-item:nth-child(n + 1) .slide-background {
-    transform: scale(1.05);
+.process-item-card:hover .card-image-background {
+    transform: scale(1.03); 
 }
 
-/* Overlay oscuro para mejorar la visibilidad del texto */
-.process-slide-item .background-overlay {
+.card-image-background .background-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    transition: background 0.5s;
+    /* Overlay muy sutil, ya que la imagen no superpone texto */
+    background: rgba(0, 0, 0, 0.1); 
 }
 
 /* ------------------------------------------- */
-/* 8.4. CONTENIDO DEL PASO (TEXTO) */
+/* 8.6. RESPONSIVE (Ajuste para móviles y tablets) */
 /* ------------------------------------------- */
 
-.slide-content-text {
-    position: relative;
-    z-index: 10;
-    max-width: 800px;
-    padding: 40px;
-    text-align: center;
-    /* Animación de entrada de contenido */
-    animation: fadeInSlideUp 0.8s ease-out 0.2s forwards;
-    opacity: 0; /* Inicia invisible para la animación */
-}
+@media (max-width: 992px) {
+    .process-header .header-title {
+        font-size: 3rem;
+    }
 
-.slide-content-text .slide-title {
-    font-size: 5rem;
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    color: var(--accent-color); /* Título en color de acento */
-}
+    .process-item-card,
+    /* 🔑 MUY IMPORTANTE: Resetear el orden en móvil para que siempre sea Texto luego Imagen */
+    .process-item-card:nth-child(2n) {
+        flex-direction: column; 
+        min-height: auto;
+    }
 
-.slide-content-text .slide-description {
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: rgba(252, 252, 252, 0.95);
-}
+    .card-text-content {
+        padding: 30px;
+        order: 1; 
+    }
 
-.step-number-large {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 15rem; /* Número de paso grande y sutil */
-    font-weight: 900;
-    color: rgba(255, 255, 255, 0.08); /* Muy transparente */
-    z-index: -1;
-    pointer-events: none;
-    transition: color 0.5s;
-}
+    .card-image-background {
+        min-height: 250px; 
+        order: 2; 
+    }
 
-/* ------------------------------------------- */
-/* 8.5. INDICADORES DE PAGINACIÓN (LATERAL DERECHO) */
-/* ------------------------------------------- */
+    .card-title {
+        font-size: 2rem;
+    }
 
-.process-indicators {
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 30; /* Debe estar sobre el carrusel */
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    pointer-events: auto; /* Permitir clicks */
-}
-
-.process-indicator-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.3s, transform 0.3s;
-    text-align: right;
-    justify-content: flex-end;
-    gap: 15px;
-}
-
-.process-indicator-item:hover {
-    opacity: 0.8;
-    transform: translateX(-5px);
-}
-
-.process-indicator-item.active-step {
-    opacity: 1;
-    transform: translateX(-10px);
-}
-
-.indicator-number {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: #ffffff;
-    line-height: 1;
-}
-
-.indicator-title {
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #ffffff;
-    /* Subrayado solo en el paso activo */
-    border-bottom: 2px solid transparent; 
-    transition: border-color 0.3s, color 0.3s;
-    padding-bottom: 2px;
-}
-
-.active-step .indicator-title {
-    color: var(--accent-color);
-    border-color: var(--accent-color);
+    .card-description {
+        font-size: 1rem;
+    }
 }
 
 /* ==================================================== */
@@ -1377,17 +1386,19 @@ body {
     width: 100%; 
     margin: 0; 
     display: flex; 
+    /* 🔑 CLAVE: INVERTIMOS EL ORDEN DE LAS COLUMNAS */
+    flex-direction: row-reverse; 
     align-items: stretch; 
     min-height: 600px; 
     border-radius: 0; 
     overflow: hidden; 
-    background-color: #111; 
+    background-color: #000; 
     box-shadow: none; 
 }
 
 /* 3. COLUMNA DEL FORMULARIO (Izquierda) - Ocupa el 50% */
 .contact-form-container {
-    flex: 1; /* Vuelve a 50% */
+    flex: 1; /* Ocupa el 50% */
     padding: 60px 80px; 
     display: flex;
     flex-direction: column;
@@ -1397,7 +1408,8 @@ body {
 
 .contact-title {
     font-size: 2.5rem;
-    font-weight: 900;
+    font-weight: 900; /* 🔑 Nunito Sans Black */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 Aplicamos Nunito Sans */
     line-height: 1.1;
     margin-bottom: 10px;
     color: #fff; 
@@ -1405,6 +1417,9 @@ body {
 
 .contact-subtitle {
     font-size: 1.1rem;
+    font-weight: 400; /* 🔑 Nunito Sans Regular */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 Aplicamos Nunito Sans */
+    font-stretch: expanded; /* 🔑 Estilo Expanded */
     margin-bottom: 30px;
     color: rgba(255, 255, 255, 0.85); 
 }

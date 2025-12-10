@@ -4,7 +4,7 @@
 
 /* Color Principal (Amarillo Mostaza) */
 :root {
-    --footer-background: #e6c757; /* Color Amarillo/Mostaza de la imagen */
+    --footer-background: #a7a5a0; /* Color Amarillo/Mostaza de la imagen */
     --footer-text-color: #000;    /* Texto negro para contraste */
     --primary-background: #1a1a1a; /* Tu color de fondo primario */
 }

@@ -95,7 +95,7 @@ export const Navbar = () => {
                         className="nav-button-link"
                         scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })} 
                     >
-                        <button className="nav-button">Contacto</button>
+                        <button className="nav-button">HABLEMOS</button>
                     </HashLink>
                 </div>
             </div>

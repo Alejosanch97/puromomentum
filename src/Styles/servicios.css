@@ -5,7 +5,7 @@
 
 /* --- Variables (Asegúrate de que coincidan con tu Home.css) --- */
 :root {
-    --color-primary: #FF5733; 
+    --color-primary: #cf4024; 
     --color-text-light: #FFFFFF; 
     /* ... otras variables ... */
 }
@@ -61,10 +61,10 @@
 
 /* AJUSTE CLAVE: Título Principal */
 .services-hero-title {
-    /* Manteniendo el tamaño base y el máximo (4.0rem) */
     font-size: clamp(2.1rem, 5.5vw, 4.0rem); 
     line-height: 1.1; 
     font-weight: 900; 
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 APLICADO */
     margin-bottom: 30px;
     text-transform: uppercase; 
 }
@@ -81,7 +81,9 @@
 /* AJUSTE CLAVE: Subtítulo (sin cambios) */
 .services-hero-subtitle {
     font-size: 1.1rem; 
-    font-weight: 400;
+    font-weight: 400; /* 🔑 APLICADO */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 APLICADO */
+    font-stretch: expanded; /* 🔑 APLICADO */
     line-height: 1.5;
     margin-bottom: 40px;
     max-width: 650px; 
@@ -124,7 +126,7 @@
 /* --- Variables (Asegúrate de que coincidan con tu Home.css) --- */
 :root {
     --color-primary: #FF5733; 
-    --color-system-card-bg: #D8432A; /* Rojo/Naranja Oscuro para las tarjetas */
+    --color-system-card-bg: #cf4024; /* Rojo/Naranja Oscuro para las tarjetas */
     --color-background-light: #F0F0E8; /* Fondo Gris/Beige Claro de la sección */
     --color-text-dark: #333333;
     --color-text-light: #FFFFFF; 
@@ -152,22 +154,30 @@
 .services-system-header-title {
     font-size: clamp(2.5rem, 6vw, 4.2rem); 
     font-weight: 900; 
+    font-family: 'Nunito Sans', sans-serif; 
     margin-bottom: 20px;
     color: var(--color-primary); 
     line-height: 1.1;
+    color: var(--color-text-dark);
 }
 
 .services-system-header-title .services-system-highlight {
-    color: var(--color-text-dark); 
+    color: var(--color-primary); /* La cambié a primary para que sea naranja, como en la imagen */
+    display: block; /* Forzar que ocupe toda la línea y el siguiente texto vaya abajo */
+    /* Si quieres que solo 'Nuestro sistema' sea naranja, y 'del propósito al impacto' sea negro, 
+       debes envolver 'Nuestro sistema' con el span .services-system-highlight en el HTML */
 }
 
 /* Subtítulo Introductorio */
 .services-system-header-intro-text {
-    font-size: 1.1rem; /* Aumento del tamaño de fuente */
+    font-size: 1.1rem; 
+    font-weight: 400; /* 🔑 APLICADO */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 APLICADO */
+    font-stretch: expanded; /* 🔑 APLICADO */
     line-height: 1.6;
-    max-width: 800px; /* Aumento de ancho para justificación */
+    max-width: 800px; 
     margin: 0 auto 20px;
-    text-align: justify; /* AJUSTE CLAVE: Justificar el texto */
+    text-align: justify; 
     text-justify: inter-word;
 }
 
@@ -191,8 +201,13 @@
     text-align: left;
     border-radius: 8px; 
     min-height: 280px; /* Aumento de altura mínima para uniformidad */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px #cf4024;
     transition: transform 0.3s ease;
+}
+
+.services-step-card,
+.services-step-card * {
+    border-bottom: none !important;
 }
 
 .services-step-card:hover {
@@ -202,25 +217,29 @@
 .services-card-title {
     font-size: 1.4rem;
     font-weight: 700;
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--color-text-light); 
-    padding-bottom: 10px;
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 APLICADO */
+    margin-bottom: 40px;
+    border-bottom: none; 
+    padding-bottom: 0px;
 }
 
 .services-card-description {
-    font-size: 1.05rem; /* AJUSTE CLAVE: Aumento del tamaño de fuente */
+    font-size: 1.05rem; 
+    font-weight: 400; 
+    font-family: 'Nunito Sans', sans-serif; 
+    font-stretch: expanded; 
     line-height: 1.6;
     opacity: 0.9;
-    text-align: justify; /* AJUSTE CLAVE: Justificar el texto */
+    text-align: justify; 
     text-justify: inter-word;
+    /* Ahora la descripción puede expandirse sin la restricción del padding inferior del título */
 }
-
 
 /* 4. Texto Inferior (Footer de la Sección) */
 .services-system-footer-text {
     font-size: 0.9rem;
     line-height: 1.8;
-    color: #666;
+    color: #cf4024;
     max-width: 800px;
     margin: 0 auto;
     padding-top: 20px;
@@ -261,7 +280,8 @@
 /* 2. Encabezado de la Sección */
 .services-levels-header-title {
     font-size: clamp(1.8rem, 4vw, 3rem);
-    font-weight: 700;
+    font-weight: 900; 
+    font-family: 'Nunito Sans', sans-serif; 
     margin-bottom: 50px;
     line-height: 1.2;
 }
@@ -280,55 +300,86 @@
 
 /* Estilo de la Tarjeta */
 .services-level-card {
-    background-color: var(--color-card-light-bg); 
-    color: var(--color-text-dark);
+    color: var(--color-text-light);
     border-radius: 20px; 
     padding: 40px 30px;
-    min-height: 600px; /* AJUSTE CLAVE: Forzar una altura mínima para uniformidad */
+    min-height: 600px; 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); 
     
-    /* AJUSTE CLAVE: Usar Flexbox para mejor control del contenido */
     display: flex; 
     flex-direction: column;
     text-align: center;
+
+    /* 🔑 CLAVE PARA EL FONDO: Configuración de capas */
+    position: relative; 
+    z-index: 1; /* Asegura que el contenido de la tarjeta esté encima */
+    overflow: hidden; 
 }
 
-/* Icono/Forma geométrica */
+/* 🔑 CLASE AÑADIDA: Estilos para la imagen de fondo */
+.services-card-background-image {
+    position: absolute; /* Posicionamiento absoluto dentro del padre (services-level-card) */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Estilos del Fondo */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center bottom; 
+    
+    /* Ajuste Visual: Reduce la opacidad para que no opaque el texto */
+    opacity: 1; 
+    
+    z-index: -1; /* Mueve el fondo detrás del contenido de la tarjeta */
+    
+    /* transform: scale(1.5); /* Opción para hacer la imagen más grande */
+}
+
+/* Contenedor del Icono/Forma geométrica */
 .services-card-shape-icon {
-    /* Mantenemos el contenedor de 100px de alto */
     height: 100px; 
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
-    color: var(--color-text-dark); 
-    font-size: 5rem; 
-    line-height: 1;
+}
+
+/* Estilos para la imagen del icono */
+.services-card-icon-img {
+    max-width: 100%; 
+    max-height: 100%; 
+    width: auto;
+    height: auto;
+    object-fit: contain; 
 }
 
 .services-card-name {
     font-size: 1.5rem;
     font-weight: 700;
+    font-family: 'Nunito Sans', sans-serif; 
     margin-bottom: 20px;
 }
 
 .services-card-body {
     font-size: 0.9rem;
+    font-weight: 400; 
+    font-family: 'Nunito Sans', sans-serif; 
+    font-stretch: expanded; 
     line-height: 1.6;
     opacity: 0.9;
     
-    /* AJUSTE CLAVE: Permite que el cuerpo del texto crezca para llenar el espacio, 
-       empujando el beneficio hacia abajo si es necesario */
     flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Para separar descripción y beneficio */
-    text-align: justify; /* Justificar el texto */
+    justify-content: space-between; 
+    text-align: justify; 
     text-justify: inter-word;
 }
 
 .services-card-description {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: none; /* Línea eliminada */
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
@@ -338,14 +389,13 @@
     color: var(--color-primary); 
     text-align: center; 
     margin-top: auto; 
-    /* AJUSTE CLAVE: Aplicamos la negrita directamente al contenedor del beneficio */
     font-weight: 800; 
 }
 
 .services-card-benefit strong {
-    /* Mantenemos por si acaso se usa doble negrita, pero la principal ya está arriba */
     font-weight: 800; 
 }
+
 
 /* ================================================= */
 /* SERVICIOS.CSS - SECCIÓN 4: LLAMADA A LA ACCIÓN / CONTACTO FINAL */
@@ -357,6 +407,7 @@
     --color-background-white: #FFFFFF; /* Fondo Blanco */
     --color-text-dark: #333333;       /* Texto oscuro principal */
     --color-text-medium: #666666;     /* Texto secundario/descripción */
+    --color-text-light: #FFFFFF;      /* Texto de botón (añadido para claridad) */
 }
 
 /* 1. Contenedor de la Sección Principal (Fondo blanco) */
@@ -374,13 +425,12 @@
 
 /* 2. Título Principal (Grande y llamativo) */
 .services-cta-title {
-    /* AJUSTE CLAVE: Fuente grande para máximo impacto */
     font-size: clamp(2.5rem, 6vw, 4.5rem); 
-    font-weight: 800; /* Extra bold */
+    font-weight: 900; /* 🔑 APLICADO: Nunito Sans (Extrabold) para Títulos */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 APLICADO */
     line-height: 1.1;
     margin-bottom: 30px;
 }
-
 .services-cta-title .services-highlight-text {
     /* Resalta la palabra clave con color primario */
     color: var(--color-primary); 
@@ -389,6 +439,9 @@
 /* 3. Texto Secundario / Descripción */
 .services-cta-description {
     font-size: 1.15rem;
+    font-weight: 400; /* 🔑 APLICADO: Nunito Sans (Regular) para Descripción */
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 APLICADO */
+    font-stretch: expanded; /* APLICADO: Estiramiento de fuente para diferenciar el "otro Nunito" */
     line-height: 1.7;
     color: var(--color-text-medium);
     margin-bottom: 40px;
@@ -406,21 +459,23 @@
 /* 4. Botón de Llamada a la Acción (CTA) */
 .services-cta-button {
     background-color: var(--color-primary); 
-    color: var(--color-text-light); /* Asumiendo que el texto del botón es blanco */
+    color: var(--color-text-light); /* Texto blanco */
     font-size: 1.1rem;
     font-weight: 700;
     padding: 15px 35px;
     border: none;
-    border-radius: 6px; /* Bordes suaves */
+    border-radius: 6px; 
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-family: 'Nunito Sans', sans-serif; /* 🔑 APLICADO al botón */
 }
 
 .services-cta-button:hover {
-    background-color: #E6492A; /* Tono ligeramente más oscuro al pasar el ratón */
+    background-color: #E; /* Tono ligeramente más oscuro al pasar el ratón */
     transform: translateY(-2px);
 }
 

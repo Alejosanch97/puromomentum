@@ -25,10 +25,6 @@ export const Footer = () => (
                 <a href="#" target="_blank" aria-label="YouTube">
                     <i className="fa-brands fa-youtube"></i>
                 </a>
-                {/* Facebook */}
-                <a href="#" target="_blank" aria-label="Facebook">
-                    <i className="fa-brands fa-facebook-f"></i>
-                </a>
                 {/* Instagram */}
                 <a href="#" target="_blank" aria-label="Instagram">
                     <i className="fa-brands fa-instagram"></i>
