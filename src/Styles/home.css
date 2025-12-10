@@ -1962,6 +1962,10 @@ body {
         font-size: 2rem;
         text-align: center;
     }
+
+    .header-subtitle {
+    text-align: justify;
+}
     .intro-text {
         font-size: 1rem;
         text-align: justify;
