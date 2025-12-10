@@ -80,7 +80,7 @@
 
 /* AJUSTE CLAVE: Subtítulo (sin cambios) */
 .services-hero-subtitle {
-    font-size: 1.1rem; 
+    font-size: 1.3rem; 
     font-weight: 400; /* 🔑 APLICADO */
     font-family: 'Nunito Sans', sans-serif; /* 🔑 APLICADO */
     font-stretch: expanded; /* 🔑 APLICADO */
@@ -90,6 +90,7 @@
     margin-left: auto;
     margin-right: auto;
     opacity: 0.9; 
+    text-align: center;
 }
 
 /* RESALTADO CLAVE: Marca PURO MOMENTUM dentro del Subtítulo (sin cambios) */
@@ -113,6 +114,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: background-color 0.3s ease;
+    text-decoration: none; 
 }
 
 .services-hero-button:hover {
@@ -386,7 +388,7 @@
 
 .services-card-benefit {
     font-size: 0.95rem;
-    color: var(--color-primary); 
+    color: #f52c04; 
     text-align: center; 
     margin-top: auto; 
     font-weight: 800; 
@@ -634,12 +636,13 @@
     }
 
     .services-hero-title {
-        font-size: clamp(1.8rem, 10vw, 3.5rem); 
+        /* Nuevo: Mínimo 1.5rem, preferido 8vw, Máximo 2.8rem */
+        font-size: clamp(1.5rem, 8vw, 1.8rem); 
         margin-bottom: 15px;
     }
     
     .services-hero-subtitle {
-        font-size: 0.95rem;
+        font-size: 0.90rem;
         margin-bottom: 25px;
     }
     
@@ -651,7 +654,7 @@
     /* === 2.2. SECCIÓN SISTEMA DE PROCESO === */
     
     .services-system-header-title {
-        font-size: 2.5rem; 
+        font-size: 2.2rem; 
         margin-bottom: 15px;
     }
 

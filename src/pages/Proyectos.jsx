@@ -1,4 +1,7 @@
 import React from "react";
+// 🚨 Importamos HashLink para la navegación (necesario para el nuevo botón)
+import { HashLink } from "react-router-hash-link";
+
 // Importamos los estilos de proyectos (necesitarás crear este archivo: proyectos.css)
 import "../Styles/proyectos.css"; 
 import yout from "../assets/img/yout.mp4"; 
@@ -6,9 +9,11 @@ import yout1 from "../assets/img/yout1.mp4";
 import yout2 from "../assets/img/yout2.mp4"; 
 import yout3 from "../assets/img/yout3.mp4"; 
 import yout4 from "../assets/img/yout4.mp4"; 
+
+const vimeoShowreelSrc = "https://player.vimeo.com/video/1136737275?h=b1a2082218&loop=0&byline=0&portrait=0&title=0&autoplay=0&muted=0";
 // --- DATOS DE LOS PROYECTOS (SECCIÓN 2) ---
 const moveMp4 =
-  "https://res.cloudinary.com/duqi8oy4a/video/upload/v1764345570/move3_ydfksw.mp4";
+  "https://res.cloudinary.com/duqi8oy4a/video/upload/v1765372964/1722881-uhd_3840_2160_25fps_l3lrxu.mp4";
 const projectsData = [
     {
         id: 1,
@@ -84,6 +89,16 @@ export const Proyectos = () => {
                     <p className="projects-hero-subtitle">
                         En <strong className="projects-brand-highlight">PURO MOMENTUM</strong> exploramos la forma en que la intención se convierte en imagen, y la emoción encuentra su lenguaje.
                     </p>
+                    
+                    {/* 🚨 NUEVO BOTÓN: "Conversemos" -> /#contacto (Usando HashLink) */}
+                    <HashLink 
+                        to="/#contacto" 
+                        // Reutilizamos la clase de botón del hero de Servicios o puedes crear una específica.
+                        className="services-hero-button" 
+                        scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                        CONVERSEMOS
+                    </HashLink>
                 </div>
                 
             </section>
@@ -129,14 +144,32 @@ export const Proyectos = () => {
                 </div>
             </section>
 
-            {/* --- SECCIÓN 3: RECAP ANUAL --- */}
+            {/* --- SECCIÓN 3: RECAP ANUAL (Ahora incluye 2 Videos) --- */}
             <section className="projects-recap-section">
                 <div className="projects-recap-wrapper">
                     <h2 className="projects-recap-title">
                         El resumen de <span className="recap-highlight">un año en movimiento.</span>
                     </h2>
                     
-                    <div className="projects-recap-video-container">
+                    {/* 🔑 VIDEO 1: SHOWREEL DE VIMEO (El primer video) */}
+                    <div className="projects-recap-video-container showreel-container">
+                        <iframe
+                            src={vimeoShowreelSrc}
+                            frameBorder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowFullScreen
+                            className="projects-recap-video-iframe"
+                            title="Showreel Puro Momentum"
+                            // Añade la clave para forzar la actualización si lo deseas, aunque aquí no es necesario
+                            // key={vimeoShowreelSrc} 
+                        ></iframe>
+                    </div>
+                    
+                    {/* --- Separador Visual entre videos --- */}
+                    <div className="projects-recap-separator"></div>
+
+                    {/* 🔑 VIDEO 2: RECAP ANUAL ORIGINAL (El segundo video) */}
+                    <div className="projects-recap-video-container recap-original-container">
                         <iframe
                             className="projects-recap-video-iframe"
                             src={recapVideo.url}
@@ -152,6 +185,31 @@ export const Proyectos = () => {
                     </p>
                 </div>
             </section>
+            {/* --- SECCIÓN 4: LLAMADA A LA ACCIÓN / CONTACTO FINAL (Clases: services-contact-cta-section) --- */}
+                        <section className="services-contact-cta-section theme-dark">
+                            <div className="services-cta-content-wrapper">
+                                {/* Título principal */}
+                                <h2 className="services-cta-title">
+                                    <span className="services-highlight-text">Nada se mueve solo</span>
+                                    <br />
+                                </h2>
+            
+                                {/* Texto secundario */}
+                                <p className="services-cta-description">
+                                    Cada proyecto comienza con <strong className="services-highlight-text">intención</strong>, 
+                                    <strong className="services-highlight-text"> dirección</strong> y una buena <strong className="services-highlight-text">conversación</strong>.
+                                </p>
+            
+                                {/* 🚨 BOTÓN 2: "Conversemos" -> /#contacto (Usando HashLink) */}
+                                <HashLink 
+                                    to="/#contacto" 
+                                    className="services-cta-button"
+                                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                                >
+                                    Conversemos
+                                </HashLink>
+                            </div>
+                        </section>
 
         </main>
     );

@@ -492,7 +492,7 @@ body {
 }
 
 .header-title {
-    font-size: 4rem; 
+    font-size: 3.5rem; 
     font-weight: 900; /* 🔑 Nunito Sans Black */
     line-height: 1.1;
     margin-bottom: 15px;
@@ -506,8 +506,8 @@ body {
     font-weight: 300;
     color: #ccc;
     max-width: 800px;
-    margin: 0;
-    text-align: left;
+    margin: 30px auto 0 auto;
+    text-align: justify;
 }
 
 /* Bloque de Texto Introductorio (Columna Derecha) */
@@ -646,6 +646,7 @@ body {
 }
 .card-strategy .card-title {
     color: white;
+    font-size: 35px;
 }
 
 /* Dirección Cinematográfica (Similar al rojo) */
@@ -660,6 +661,7 @@ body {
 }
 .card-cinematography .card-title {
     color: black;
+    font-size: 28px;
 }
 
 /* Eficiencia Operativa (Similar al blanco/gris en fondo oscuro) */
@@ -674,6 +676,7 @@ body {
 }
 .card-efficiency .card-title {
     color: black;
+    font-size: 35px;
 }
 
 /* ------------------------------------------- */
@@ -813,7 +816,7 @@ body {
     
     /* 🔑 CLAVE: Forzamos la curvatura en el contenedor más externo */
     /* Usamos clip-path para un borde suave y funcional */
-    clip-path: inset(0 round 90px); 
+    clip-path: inset(0 round 20px); 
     /* 🔑 Alternativa más compatible con algunos navegadores (Descomentar si clip-path falla) */
     /* -webkit-mask-image: -webkit-radial-gradient(white, black); */
     
