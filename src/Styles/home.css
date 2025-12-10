@@ -1915,7 +1915,7 @@ body {
 }
 
 .hero-subtitle {
-    text-align: justify;
+    text-align: center;
     margin: 0 auto 30px auto;
 }
 
@@ -1960,7 +1960,7 @@ body {
     }
     .header-title {
         font-size: 2rem;
-        text-align: justify;
+        text-align: center;
     }
     .intro-text {
         font-size: 1rem;
