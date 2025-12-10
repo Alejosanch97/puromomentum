@@ -1966,6 +1966,10 @@ body {
     .header-subtitle {
     text-align: justify;
 }
+
+.intro-subtitle {
+    text-align: justify;
+}
     .intro-text {
         font-size: 1rem;
         text-align: justify;
