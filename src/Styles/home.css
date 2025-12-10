@@ -814,15 +814,6 @@ body {
     padding-bottom: 50%;
     height: 0;
     
-    /* 🔑 CLAVE: Forzamos la curvatura en el contenedor más externo */
-    /* Usamos clip-path para un borde suave y funcional */
-    clip-path: inset(0 round 20px); 
-    /* 🔑 Alternativa más compatible con algunos navegadores (Descomentar si clip-path falla) */
-    /* -webkit-mask-image: -webkit-radial-gradient(white, black); */
-    
-    /* Eliminamos border-radius aquí para evitar conflictos */
-    /* border-radius: 90px; <--- ELIMINAR O COMENTAR */
-    
     overflow: hidden; 
     background-color: transparent;
 
@@ -844,10 +835,6 @@ body {
     width: 100%;
     height: 100%;
     border: 0;
-
-    /* 🔑 CLAVE: Asegurarse de que el Iframe sea cuadrado y ocupe todo el espacio. */
-    /* Dejamos border-radius, ya que es la forma más limpia, y clip-path está en el padre. */
-    border-radius: 90px; 
 }
 
 /* ==================================================== */
@@ -1906,8 +1893,7 @@ body {
     .hero-title {
     /* Mantenemos el ajuste anterior que funcionó para Slide 1 */
     font-size: 9vw; 
-    line-height: 1.1; /* Ajuste ligero */
-    text-align: center; 
+    line-height: 1.1; /* Ajuste ligero */ 
 }
     .hero-title.multi-line {
         align-items: center; 
@@ -1929,7 +1915,7 @@ body {
 }
 
 .hero-subtitle {
-    text-align: center;
+    text-align: justify;
     margin: 0 auto 30px auto;
 }
 
