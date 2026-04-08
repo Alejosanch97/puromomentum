@@ -302,7 +302,7 @@
 
 /* Estilo de la Tarjeta */
 .services-level-card {
-    color: var(--color-text-light);
+    color: black;
     border-radius: 20px; 
     padding: 40px 30px;
     min-height: 600px; 

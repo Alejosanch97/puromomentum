@@ -452,6 +452,139 @@ body {
 }
 
 /* ==================================================== */
+/* 5. ABOUT SECTION - CORREGIDO Y RESPONSIVO */
+/* ==================================================== */
+
+.about-section {
+    width: 100%;
+    background-color: #ffffff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Reducimos el padding vertical en móvil para evitar huecos grandes */
+    /* 🎯 AJUSTE AQUÍ: Quitamos el padding global vertical */
+    padding: 0; 
+    
+    /* 🎯 AJUSTE AQUÍ: Aplicamos el padding solo arriba para el hueco superior */
+    padding-top: 40px;
+}
+
+.about-content-wrapper {
+    display: flex;
+    flex-direction: column; /* Apilado en móvil */
+    max-width: 1400px;
+    width: 100%;
+    /* Reducimos el padding lateral en móvil al mínimo */
+   padding: 0 15px;
+    align-items: center;
+    gap: 30px; /* Espacio entre imagen y texto en móvil */
+}
+
+.about-image-container {
+    width: 100%; /* Ocupa todo el ancho en móvil */
+}
+
+.about-image-placeholder {
+    width: 100%;
+    height: 300px; /* Altura más baja para móviles */
+    background-color: #3d3d3d;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.about-content {
+    width: 100%;
+    color: #000000;
+    text-align: left;
+}
+
+.about-title {
+    font-size: 32px; /* Título más pequeño en móvil */
+    font-weight: 900;
+    font-family: 'Nunito Sans', sans-serif;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.about-text {
+    font-size: 18px; /* Tamaño de fuente legible en móvil */
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: rgba(0, 0, 0, 0.85); 
+    font-weight: 400;
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: left; /* Quitamos el justify en móvil para evitar espacios raros */
+}
+
+/* --- TUS CLASES DE ESTILO (Se mantienen igual) --- */
+.about-title .highlight { color: var(--accent-color); }
+.uppercase-text { text-transform: uppercase; font-weight: 700; }
+.underlined-keyword {
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+.circled-keyword {
+    position: relative;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+    display: inline-block;
+    padding: 2px 7px; 
+    z-index: 1; 
+}
+.circled-keyword::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 125%; height: 125%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    z-index: -1; 
+}
+
+/* ==================================================== */
+/* MEDIA QUERY PARA ESCRITORIO (Laptops y PCs) */
+/* ==================================================== */
+@media (min-width: 992px) {
+    .about-section {
+        padding: 80px 0;
+    }
+
+    .about-content-wrapper {
+        flex-direction: row; /* Volvemos a poner imagen al lado de texto */
+        padding: 0 40px;
+        gap: 80px;
+    }
+
+    .about-image-container {
+        flex: 1;
+    }
+
+    .about-image-placeholder {
+        height: 480px;
+    }
+
+    .about-content {
+        flex: 1;
+    }
+
+    .about-title {
+        font-size: 56px;
+    }
+
+    .about-text {
+        font-size: 22px;
+        text-align: justify;
+    }
+}
+
+/* ==================================================== */
 /* 6. SERVICIOS SECTION (IMAGEN 1 y 2) - NUEVA SECCIÓN */
 /* ==================================================== */
 
@@ -527,7 +660,7 @@ body {
 
 /* Subtítulo alineado bajo "creativa" */
 .intro-subtitle {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 20px;
@@ -549,7 +682,7 @@ body {
 /* AJUSTE: Resalte de "PURO MOMENTUM" y "funciona" a color rojo/accent */
 .intro-text strong.highlight {
     font-weight: 700;
-    color: yellow; /* Cambiado de yellow a var(--accent-color) */
+    color: #cf4024; /* Cambiado de yellow a var(--accent-color) */
 }
 
 /* ESTILO PARA "escuchamos, comprendemos, analizamos" */
@@ -961,6 +1094,8 @@ body {
     padding: 20px;
     opacity: 1; 
     transition: background 0.4s ease;
+    
+    
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -981,6 +1116,59 @@ body {
 .gallery-item:hover .gallery-title {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Contenedor de la cuadrícula */
+.services-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    gap: 20px;
+    align-items: stretch; /* Estira las tarjetas para que midan lo mismo de alto */
+}
+
+/* La tarjeta individual */
+.service-card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo horizontalmente */
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 20px;
+    height: 100%; /* Asegura que ocupen todo el alto del grid */
+}
+
+/* 🎯 CLAVE 1: Contenedor del Icono con altura fija */
+.card-icon-container {
+    height: 80px;      /* Define una altura fija para todos */
+    display: flex;
+    align-items: center;    /* Centra el icono verticalmente */
+    justify-content: center; /* Centra el icono horizontalmente */
+    margin-bottom: 20px;
+}
+
+.card-icon-img {
+    max-height: 100%;  /* El icono no superará los 80px */
+    width: auto;       /* Mantiene la proporción */
+    object-fit: contain;
+}
+
+/* 🎯 CLAVE 2: Títulos con altura mínima o margen consistente */
+.card-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    min-height: 60px;  /* Ajusta según el título más largo para que todos ocupen 2 líneas si es necesario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* 🎯 CLAVE 3: Subtítulos alineados */
+.card-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    min-height: 50px; /* Evita que si uno tiene más texto, empuje lo de abajo */
 }
 
 /* ------------------------------------------- */
@@ -2074,5 +2262,81 @@ body {
         left: 15px;
         right: 15px;
         min-width: auto;
+    }
+
+    .about-section {
+        /* Reducimos el padding total de la sección al mínimo */
+        padding: 20px 0; 
+    }
+
+    .about-content-wrapper {
+        /* El gap es el espacio que queda ENTRE la imagen y el texto */
+        /* Si lo ves muy grande, bájalo a 15px o 20px */
+        gap: 20px; 
+    }
+
+    .about-image-container {
+        /* 🎯 CLAVE: Cambia min-height a auto para que no fuerce espacio extra */
+        min-height: auto; 
+        width: 100%;
+        margin-bottom: 0; /* Aseguramos que no tenga margen inferior */
+    }
+
+    .about-image-placeholder {
+        /* Controla la altura de la imagen aquí */
+        height: 250px; 
+        margin-bottom: 0;
+    }
+
+    .about-content {
+        /* Eliminamos cualquier padding superior que pueda tener el contenedor de texto */
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .about-title {
+        /* Reducimos el margen superior del título para pegarlo más a la imagen */
+        margin-top: 10px; 
+        font-size: 30px;
+    }
+
+    /* 🎯 ESTA ES LA REGLA CLAVE */
+    .contact-image-container {
+        display: none; /* Elimina la imagen y su contenedor por completo */
+    }
+
+    /* Opcional: Ajustar el padding del formulario para que se vea mejor solo */
+    .contact-form-container {
+        padding: 40px 20px;
+        width: 100%; /* Asegura que use todo el ancho */
+    }
+
+    .gallery-grid {
+        /* Aseguramos que solo haya una columna para dar más espacio vertical */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+
+    .gallery-item {
+        /* 1. Cambiamos la altura a una más adecuada para fotos verticales/cuadradas */
+        height: 300px; 
+
+        /* 2. 🎯 LA CLAVE: Ajustamos la posición al top para priorizar las cabezas */
+        background-position: top center; 
+
+        /* 3. Opción A: Mantener 'cover' pero asegurar que se vea la parte superior */
+        background-size: cover; 
+
+        /* 4. Opción B: Si quieres que la imagen NUNCA se corte (aunque queden bordes negros) 
+           usa la siguiente línea en lugar de la anterior: */
+        /* background-size: contain; */
+        
+        background-repeat: no-repeat;
+    }
+
+    /* Opcional: Si el texto del overlay tapa mucho la imagen en móvil */
+    .gallery-overlay {
+        padding: 20px;
+        justify-content: flex-end; /* Mueve el título al final para no tapar la cara */
     }
 }

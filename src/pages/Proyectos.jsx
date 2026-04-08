@@ -9,6 +9,7 @@ import yout1 from "../assets/img/yout1.mp4";
 import yout2 from "../assets/img/yout2.mp4"; 
 import yout3 from "../assets/img/yout3.mp4"; 
 import yout4 from "../assets/img/yout4.mp4"; 
+import yout5 from "../assets/img/yout5.mp4"; 
 
 const vimeoShowreelSrc = "https://player.vimeo.com/video/1136737275?h=b1a2082218&loop=0&byline=0&portrait=0&title=0&autoplay=0&muted=0";
 // --- DATOS DE LOS PROYECTOS (SECCIÓN 2) ---
@@ -34,20 +35,29 @@ const projectsData = [
     },
     {
         id: 3,
+        title: "Moha Expert",
+        subtitle: "Académico · Consultivo · Finanzas",
+        description: "Un video manifiesto diseñado para posicionar autoridad desde el primer segundo. Desde la narrativa hasta la dirección visual, construimos un mensaje claro, contundente y alineado con la visión de Moha Expert: criterio, método y control del riesgo. Una pieza pensada para marcar postura, elevar la percepción de marca y establecer una base sólida para la conversión y el crecimiento a largo plazo.",
+        // Asegúrate de usar la variable donde importaste el mp4
+        url: yout5, 
+        layout: "default", 
+    },
+    {
+        id: 4,
         title: "KFC Colombia",
         subtitle: "Comercial · Lifestyle · Comida",
         description: "Creamos una pieza de ritmo ágil y lenguaje visual fresco para conectar con públicos jóvenes sin perder la esencia de marca. Cada plano comunica cercanía, dinamismo y sabor; una campaña que llevó el lifestyle de KFC a las redes con autenticidad y movimiento.",
         url: yout2, 
-        layout: "default",
+        layout: "reversed",
     },
     {
-        id: 4,
+        id: 5,
         title: "Just Be Present",
         subtitle: "Lifestyle · Moda · Deportivo",
         description: "Parte de una campaña que fusiona moda, mindfulness y deporte. Mostramos cómo la marca respira coherencia entre diseño y propósito, amplificando su presencia en el mundo del yoga a través de una estética minimalista y una narrativa honesta.",
         // Usamos el ID del Short para el embed
         url: yout3,
-        layout: "reversed",
+        layout: "default",
     },
 ];
 
@@ -167,18 +177,6 @@ export const Proyectos = () => {
                     
                     {/* --- Separador Visual entre videos --- */}
                     <div className="projects-recap-separator"></div>
-
-                    {/* 🔑 VIDEO 2: RECAP ANUAL ORIGINAL (El segundo video) */}
-                    <div className="projects-recap-video-container recap-original-container">
-                        <iframe
-                            className="projects-recap-video-iframe"
-                            src={recapVideo.url}
-                            title={recapVideo.title}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            frameBorder="0"
-                        ></iframe>
-                    </div>
 
                     <p className="projects-recap-description">
                         {recapVideo.description}

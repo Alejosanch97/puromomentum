@@ -14,6 +14,7 @@ const moveMp4 =
 import icono1 from "../assets/img/icon1.png";
 import icono2 from "../assets/img/icon2.png";
 import icono3 from "../assets/img/icon3.png";
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const serviceCards = [
     {
@@ -39,8 +40,8 @@ const serviceCards = [
     },
 ];
 
-const placeholderImageUrlGallery = "https://i.pinimg.com/736x/53/62/52/53625269a64907fdd9d347566eec2d8e.jpg";
-const placeholderImageUrlGallery1 = "https://i.pinimg.com/736x/f5/a3/1c/f5a31c35faa27de13b2dac1a5b7f12cc.jpg";
+const placeholderImageUrlGallery = "https://i.pinimg.com/736x/22/f5/fb/22f5fb4d1824fca6129cb61fbfd97a5d.jpg";
+const placeholderImageUrlGallery1 = "https://i.pinimg.com/736x/65/31/59/653159a80a7a8a2d9037365a02a88e3f.jpg";
 const placeholderImageUrlGallery2 = "https://i.pinimg.com/736x/74/0f/d3/740fd33dffa7a5a58b2019f4990c50d3.jpg";
 const placeholderImageUrlGallery3 = "https://i.pinimg.com/736x/5b/38/19/5b38194b7db04f13ab4bfa2187793768.jpg";
 const placeholderImageUrlGallery4 = "https://i.pinimg.com/736x/7d/1b/7a/7d1b7ae4d30bcae7873490a5b6a0d1d8.jpg";
@@ -449,12 +450,13 @@ export const Home = () => {
                     </div>
 
                     <div className="services-intro-block">
+                        <br /><br />
+                        
                         <p className="intro-subtitle">Cada proyecto nace de una mirada estratégica que nos permite diseñar piezas alineadas con los objetivos, la identidad y la visión de cada cliente.</p>
 
                         <p className="intro-text">
                             Porque cuando una marca comunica con claridad, crece con intención. Crece con: <strong className="highlight">PURO MOMENTUM</strong>.
                             <br /><br />
-                            Antes de producir, "<span className="intro-process-step">escuchamos</span>, <span className="intro-process-step">comprendemos</span> y <span className="intro-process-step">analizamos</span>."
                         </p>
                     </div>
 
@@ -490,7 +492,7 @@ export const Home = () => {
 
                     <div className="showreel-content">
                         <p className="showreel-text">
-                            Cada historia tiene un pulso. En <strong className="uppercase-text">PURO MOMENTUM</strong> lo capturamos y lo convertimos en imagen.
+                            Cada historia tiene un pulso. <br /> En <strong className="uppercase-text">PURO MOMENTUM</strong> lo capturamos y lo convertimos en imagen.     
                             <br /><br />
                             No buscamos solo mostrar, sino "mover".
                             <br />
@@ -527,7 +529,7 @@ export const Home = () => {
 
                     <div className="content-intro-block">
                         <p className="intro-text">
-                            Creemos en el poder de las imágenes para <span className="intro-process-step">PROVOCAR EMOCIONES</span> y en la <span className="intro-process-step">ESTRATEGIA</span> como el camino para conectar con las personas correctas.
+                            Creemos en el poder de las imágenes para <span className="intro-process-step">PROVOCAR EMOCIONES</span> <br /> y en la <span className="intro-process-step">ESTRATEGIA</span> como el camino para conectar con las <br /> personas correctas.
                         </p>
                     </div>
 
@@ -693,6 +695,9 @@ export const Home = () => {
                     </div>
                 </div>
             </section> 
+
+            {/* 2. Añade el botón aquí al final */}
+            <WhatsAppButton />
         </>
     );
 };
