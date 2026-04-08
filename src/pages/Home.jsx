@@ -361,15 +361,11 @@ export const Home = () => {
                 <div className={`fixed-controls theme-${currentSlideData.colorTheme}`}>
                     {/* Redes Sociales */}
                     <div className="social-links">
-                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.youtube.com/@PuroMomentum" target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-youtube"></i>
                             <span className="social-dot"></span>youtube
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                            <i className="fab fa-linkedin-in"></i>
-                            <span className="social-dot"></span>linkedin
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/puromomentum/" target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-instagram"></i>
                             <span className="social-dot"></span>instagram
                         </a>
