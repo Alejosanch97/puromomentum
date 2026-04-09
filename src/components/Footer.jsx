@@ -22,11 +22,11 @@ export const Footer = () => (
             {/* Columna Derecha: Íconos Sociales */}
             <div className="footer-social-links">
                 {/* YouTube */}
-                <a href="#" target="_blank" aria-label="YouTube">
+                <a href="https://www.youtube.com/@PuroMomentum" target="_blank" aria-label="YouTube">
                     <i className="fa-brands fa-youtube"></i>
                 </a>
                 {/* Instagram */}
-                <a href="#" target="_blank" aria-label="Instagram">
+                <a href="https://www.instagram.com/puromomentum/" target="_blank" aria-label="Instagram">
                     <i className="fa-brands fa-instagram"></i>
                 </a>
             </div>
