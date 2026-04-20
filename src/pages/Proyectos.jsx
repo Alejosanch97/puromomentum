@@ -11,10 +11,10 @@ import yout3 from "../assets/img/yout3.mp4";
 import yout4 from "../assets/img/yout4.mp4"; 
 import yout5 from "../assets/img/yout5.mp4"; 
 
-const vimeoShowreelSrc = "https://player.vimeo.com/video/1136737275?h=b1a2082218&loop=0&byline=0&portrait=0&title=0&autoplay=0&muted=0";
+const vimeoShowreelSrc = "https://player.vimeo.com/video/1136737275?h=b1a2082218&loop=0&byline=0&portrai";
 // --- DATOS DE LOS PROYECTOS (SECCIÓN 2) ---
 const moveMp4 =
-  "https://res.cloudinary.com/duqi8oy4a/video/upload/v1765372964/1722881-uhd_3840_2160_25fps_l3lrxu.mp4";
+  "https://res.cloudinary.com/deafueoco/video/upload/v1776712663/5561377-uhd_2560_1440_25fps_k3iqd7.mp4";
 const projectsData = [
     {
         id: 1,

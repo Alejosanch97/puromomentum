@@ -8,7 +8,7 @@ import "../Styles/servicios.css";
 
 // --- DATOS DE LA SECCIÓN 2: SISTEMA DE PROPÓSITO AL IMPACTO (Imagen 3) ---
 const moveMp4 =
-  "https://res.cloudinary.com/duqi8oy4a/video/upload/v1765373459/5561377-uhd_2560_1440_25fps_ziyykk.mp4";
+  "https://res.cloudinary.com/deafueoco/video/upload/v1776712702/1722881-uhd_3840_2160_25fps_sq1ra5.mp4";
 const systemSteps = [
     {
         id: 1,
