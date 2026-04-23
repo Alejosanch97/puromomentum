@@ -138,9 +138,9 @@ export const Home = () => {
         type: 'success' 
     }); 
 
-    const SERVICE_ID = 'service_pwz2urg'; 
-    const TEMPLATE_ID = 'template_5ypbtt1'; 
-    const PUBLIC_KEY = '2IegG7vESxgsTIvx0'; 
+    const SERVICE_ID = 'service_up92zr3'; 
+    const TEMPLATE_ID = 'template_jwx80bz'; 
+    const PUBLIC_KEY = '_8gsxuES9ETtPLYg6'; 
 
     // Función para mostrar el Toast
     const showToast = (message, type = 'success') => {

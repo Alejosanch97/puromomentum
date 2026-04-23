@@ -10,6 +10,7 @@ import yout2 from "../assets/img/yout2.mp4";
 import yout3 from "../assets/img/yout3.mp4"; 
 import yout4 from "../assets/img/yout4.mp4"; 
 import yout5 from "../assets/img/yout5.mp4"; 
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const vimeoShowreelSrc = "https://player.vimeo.com/video/1136737275?h=b1a2082218&loop=0&byline=0&portrai";
 // --- DATOS DE LOS PROYECTOS (SECCIÓN 2) ---
@@ -208,6 +209,8 @@ export const Proyectos = () => {
                                 </HashLink>
                             </div>
                         </section>
+                        {/* 🚨 AQUÍ LO AGREGAS */}
+            <WhatsAppButton />
 
         </main>
     );

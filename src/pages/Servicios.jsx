@@ -5,6 +5,7 @@ import { HashLink } from "react-router-hash-link";
 
 // Importamos los estilos y el video para mantener la coherencia
 import "../Styles/servicios.css"; 
+import WhatsAppButton from '../components/WhatsAppButton';
 
 // --- DATOS DE LA SECCIÓN 2: SISTEMA DE PROPÓSITO AL IMPACTO (Imagen 3) ---
 const moveMp4 =
@@ -206,6 +207,8 @@ export const Servicios = () => {
                     </HashLink>
                 </div>
             </section>
+            {/* 🚨 AQUÍ LO AGREGAS */}
+            <WhatsAppButton />
         </main>
     );
 };
