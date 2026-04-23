@@ -138,9 +138,9 @@ export const Home = () => {
         type: 'success' 
     }); 
 
-    const SERVICE_ID = 'service_2pgj1rq'; 
-    const TEMPLATE_ID = 'template_ooijiwq'; 
-    const PUBLIC_KEY = '9giLiFzMDV12tz2_m'; 
+    const SERVICE_ID = 'service_pwz2urg'; 
+    const TEMPLATE_ID = 'template_5ypbtt1'; 
+    const PUBLIC_KEY = '2IegG7vESxgsTIvx0'; 
 
     // Función para mostrar el Toast
     const showToast = (message, type = 'success') => {
@@ -633,7 +633,7 @@ export const Home = () => {
                                 <input
                                     type="text"
                                     id="nombre"
-                                    name="nombre" 
+                                    name="nombre" // <--- Debe decir "nombre" para coincidir con {{nombre}}
                                     placeholder="Escribe tu nombre completo"
                                     required
                                 />
@@ -645,7 +645,7 @@ export const Home = () => {
                                 <input
                                     type="email"
                                     id="email"
-                                    name="email" 
+                                    name="email" // <--- Debe decir "email" para coincidir con {{email}}
                                     placeholder="tucorreo@empresa.com"
                                     required
                                 />
@@ -656,7 +656,7 @@ export const Home = () => {
                                 <label htmlFor="necesidad">Deja tu mensaje</label>
                                 <textarea
                                     id="necesidad"
-                                    name="necesidad" 
+                                    name="necesidad" // <--- Si en EmailJS usaste {{necesidad}}, aquí pon "necesidad"
                                     rows="4"
                                     placeholder="Describe cómo podemos ayudarte"
                                     required
