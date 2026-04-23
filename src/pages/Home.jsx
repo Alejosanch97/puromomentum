@@ -62,29 +62,29 @@ const contentGallery = [
 const processSteps = [
     {
         id: 1,
-        title: "Intención",
-        description: "Toda historia parte de una búsqueda. Escuchamos, observamos y entendemos para encontrar el propósito detrás de cada proyecto.",
+        title: "PLANEACIÓN",
+        description: "Toda pieza sólida empieza con claridad. Investigamos, organizamos y definimos el camino para que cada decisión responda a un objetivo claro.",
         class: "intencion",
         bgUrl: "https://i.pinimg.com/736x/a9/58/0d/a9580d2aa9e10043cfa4803d4fadb2cf.jpg" 
     },
     {
         id: 2,
-        title: "Narración",
-        description: "Traducimos la estrategia en lenguaje audiovisual. Cada encuadre y ritmo reflejan la emoción que queremos transmitir.",
+        title: "EJECUCIÓN",
+        description: "Convertimos la estrategia en acción. Producimos y desarrollamos cada pieza con precisión, cuidando que forma, ritmo y mensaje avancen en la misma dirección.",
         class: "narracion",
         bgUrl: "https://i.pinimg.com/736x/ff/af/38/ffaf38f27e90b02724640e78a24dcb17.jpg"
     },
     {
         id: 3,
-        title: "Ejecución",
-        description: "Planteamos, rodamos y finalizamos con precisión, fusionando energía creativa y control operativo.",
+        title: "DIFUSIÓN",
+        description: "No basta con crear; hay que mover el contenido. Diseñamos la salida de cada pieza para que llegue al lugar correcto, en el momento indicado y con intención.",
         class: "ejecucion",
         bgUrl: "https://i.pinimg.com/736x/42/cd/b4/42cdb40927b0422415e7608ea04d7715.jpg"
     },
     {
         id: 4,
-        title: "Optimización",
-        description: "Medimos el impacto y ajustamos con intención. Lo que funciona se escala; lo que no, se reajusta. La historia sigue en movimiento.",
+        title: "OPTIMIZACIÓN",
+        description: "Leemos el resultado y ajustamos el recorrido. Lo que conecta se potencia; lo que no, se refina. El movimiento continúa con más claridad.",
         class: "optimizacion",
         bgUrl: "https://i.pinimg.com/736x/6f/90/72/6f9072138e027529410a1dde342a7b88.jpg"
     },

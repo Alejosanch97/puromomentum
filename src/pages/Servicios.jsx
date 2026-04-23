@@ -12,26 +12,26 @@ const moveMp4 =
 const systemSteps = [
     {
         id: 1,
-        title: "Estrategia & Propósito Visual",
-        description: "Toda historia comienza con una búsqueda. Escuchamos, observamos y comprendemos la esencia de tu marca asegurando que cada decisión tenga sentido y coherencia en cada proyecto. La claridad es el primer paso hacia el impacto.",
+        title: "Planeación & Dirección Estratégica",
+        description: "Toda pieza poderosa empieza con claridad. Analizamos el contexto, ordenamos ideas y trazamos una ruta para que cada decisión creativa responda a un objetivo real. La planeación es lo que convierte intuición en dirección.",
         class: "strategy-purpose",
     },
     {
         id: 2,
-        title: "Narrativa & Dirección Cinematográfica",
-        description: "Traducimos estrategia en lenguaje audiovisual. Cada historia se construye con ritmo, emoción y estética para generar una conexión real, proyectando el ADN de la marca en imágenes que comunican y permanecen.",
+        title: "Producción & Ejecución Creativa",
+        description: "Llevamos la visión a tierra con precisión. Producimos cada pieza integrando intención, lenguaje audiovisual y control operativo, cuidando que la ejecución tenga la fuerza visual y la coherencia que la marca necesita.",
         class: "narrative-direction",
     },
     {
         id: 3,
-        title: "Producción & Ejecución Creativa",
-        description: "Hacemos que las ideas tomen forma con precisión cinematográfica. Planificamos y rodamos con intención, técnica y energía, garantizando que cada pieza sea tan sólida como inspiradora",
+        title: "Difusión & Distribución de Contenido",
+        description: "Crear es solo una parte del recorrido. Pensamos cómo, dónde y cuándo se mueve cada pieza para que el contenido no solo exista, sino que circule con sentido, alcance a la audiencia correcta y amplifique su impacto.",
         class: "production-execution",
     },
     {
         id: 4,
         title: "Optimización & Evolución de Contenido",
-        description: "Medimos el impacto y ajustamos con intención. Lo que funciona se escala; lo que no, se reajusta. El ecosistema evoluciona, lo que asegura que tu contenido se mantiene en movimiento y funciona.",
+        description: "Ningún contenido termina al publicarse. Observamos el desempeño, identificamos aprendizajes y ajustamos el sistema para que cada publicación siguiente sea más precisa, más coherente y más efectiva en el tiempo.",
         class: "optimization-evolution",
     },
 ];
